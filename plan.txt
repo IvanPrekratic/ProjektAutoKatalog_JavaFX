@@ -1,0 +1,14 @@
+Login screen --> s obzirom na role dolazis na pretragu ili pretragu/dodavanje artikala
+
+Pretraga
+    Odabir pretraga po autu ili dijelu
+    Pretraga po autu
+        Dropdown za make, model, partCategory
+        Izbacuje dostupne dijelove za stavit u kosaricu
+    Pretraga po dijelu
+        Dropdown za partCategory
+        Izbacuje dostupne dijelove za stavit u kosaricu
+
+Košarica
+    Kosarica na menubaru
+    Klasican checkout
