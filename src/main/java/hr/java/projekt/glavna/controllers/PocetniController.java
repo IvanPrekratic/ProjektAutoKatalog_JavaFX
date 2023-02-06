@@ -21,6 +21,9 @@ public class PocetniController {
     private TextField passwordField;
     @FXML
     private Button signinButton;
+    /*
+    komentaaaar
+     */
 
     public void buttonAction(){
         String username = usernameField.getText();
