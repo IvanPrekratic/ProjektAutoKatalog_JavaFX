@@ -15,7 +15,7 @@ public class AutoKatalog extends Application {
     public void start(Stage stage) throws IOException {
         appStage = stage;
 
-        FXMLLoader fxmlLoader = new FXMLLoader(AutoKatalog.class.getResource("views/pocetni-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(AutoKatalog.class.getResource("/pocetni-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),800,600);
         stage.setTitle("Katalog autodijelova");
         stage.setScene(scene);

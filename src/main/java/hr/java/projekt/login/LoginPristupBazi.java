@@ -1,5 +1,6 @@
 package hr.java.projekt.login;
 
+import java.io.IOException;
 import java.sql.*;
 
 public class LoginPristupBazi{
@@ -8,18 +9,14 @@ public class LoginPristupBazi{
         String password = podaci.getPassword();
         String endRole = "";
 
-        Connection veza = null;
-        Statement stmt = null;
-        ResultSet rs = null;
 
         String userNameDB;
         String passwordDB;
         String roleDB;
 
-        try{
-            veza = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/java-autokatalog", "iprekrati", "iprekrati");
-            stmt = veza.createStatement();
-            rs = stmt.executeQuery("SELECT * FROM USERS");
+        try(Connection veza = Database.connectingToDatabase()){
+            Statement stmt = veza.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM USERS");
             while (rs.next()){
                 int id = rs.getInt("id");
                 userNameDB = rs.getString("username");
@@ -31,16 +28,10 @@ public class LoginPristupBazi{
                 else if(username.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("User"))
                     endRole = "User";
             }
-        } catch (SQLException e) {
+        } catch (SQLException | IOException e) {
             throw new RuntimeException(e);
-        } finally {
-            try {
-                rs.close();
-                stmt.close();
-                veza.close();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
         return endRole;

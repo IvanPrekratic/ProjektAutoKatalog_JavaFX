@@ -5,10 +5,14 @@ import hr.java.projekt.login.LoginPodaci;
 import hr.java.projekt.login.LoginPristupBazi;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -22,7 +26,7 @@ public class PocetniController {
     @FXML
     private Button signinButton;
 
-    public void buttonAction(){
+    public void buttonAction() throws IOException {
         String username = usernameField.getText();
         String pass = passwordField.getText();
 
@@ -39,7 +43,7 @@ public class PocetniController {
         } else if (role.equals("User")) {
             BorderPane root;
             try {
-                root = (BorderPane) FXMLLoader.load(getClass().getResource("/pretraga-dijelova-view.fxml"));
+                root = (BorderPane) FXMLLoader.load(getClass().getResource("views/pretraga-dijelova-view.fxml"));
                 AutoKatalog.setMainPage(root);
             } catch (IOException e) {
                 e.printStackTrace();
