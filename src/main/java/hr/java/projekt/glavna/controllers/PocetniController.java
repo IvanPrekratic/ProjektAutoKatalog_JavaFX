@@ -25,6 +25,9 @@ public class PocetniController {
     private TextField passwordField;
     @FXML
     private Button signinButton;
+    /*
+    komentaaaar
+     */
 
     public void buttonAction() throws IOException {
         String username = usernameField.getText();
