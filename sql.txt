@@ -1,0 +1,39 @@
+CREATE TABLE AUTI(
+id int NOT NULL GENERATED ALWAYS AS IDENTITY,
+marka VARCHAR(30) NOT NULL,
+model VARCHAR(30) NOT NULL,
+PRIMARY KEY(id)
+);
+
+
+user = 3599307
+iprekrati = -2087837067
+
+CREATE TABLE users(
+id int NOT NULL GENERATED ALWAYS AS IDENTITY,
+username VARCHAR(30) NOT NULL,
+password int NOT NULL,
+role VARCHAR(30) NOT NULL,
+PRIMARY KEY(id)
+);
+INSERT INTO users(username, password, role) VALUES ('iprekrati', -2087837067, 'Admin');
+INSERT INTO users(username, password, role) VALUES ('user', 3599307, 'User');
+
+INSERT INTO auti(marka, model) VALUES ('Renault', 'Clio');
+INSERT INTO auti(marka, model) VALUES ('Opel', 'Meriva');
+INSERT INTO auti(marka, model) VALUES ('Mercedes Benz', 'E class');
+INSERT INTO auti(marka, model) VALUES ('Toyota', 'Yaris');
+
+CREATE TABLE DIJELOVI(
+id int NOT NULL GENERATED ALWAYS AS IDENTITY,
+auto_id int NOT NULL,
+naziv VARCHAR(30) NOT NULL,
+kategorija VARCHAR(30) NOT NULL,
+proizvodac VARCHAR(30) NOT NULL,
+kataloski_broj VARCHAR(30) NOT NULL,
+cijena double NOT NULL,
+dostupnost int NOT NULL,
+PRIMARY KEY(id)
+);
+
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) VALUES (1, 'Komplet kočionih obloga', 'kocnice', 'Febi Bilstein', '41 06 021 92R', 17.75, 26);
