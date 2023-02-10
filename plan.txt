@@ -12,3 +12,15 @@ Pretraga
 Košarica
     Kosarica na menubaru
     Klasican checkout
+
+
+
+Kategorije dijelova
+    Motor
+    Karoserija
+    Kočnice
+    Ovjes i upravljanje
+    Elektronika
+    Ulja i antifiz
+    Osovina i prijenos
+    Hlađenje

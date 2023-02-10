@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.java.projekt.glavna.controllers.KosaricaController">
+    <fx:include source="menuBar.fxml" />
+    <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.19998168945312" minWidth="10.0" prefWidth="40.999993896484376" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.4000244140625" minWidth="10.0" prefWidth="181.60000610351562" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.4000244140625" minWidth="10.0" prefWidth="184.4000244140625" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.2000732421875" minWidth="10.0" prefWidth="37.5999755859375" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="217.8000015258789" minHeight="10.0" prefHeight="48.80000762939454" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="398.199995803833" minHeight="10.0" prefHeight="232.59997558593753" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="408.40000000000003" minHeight="10.0" prefHeight="57.000018310546864" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="245.79995727539062" minHeight="0.0" prefHeight="228.19998168945312" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <BorderPane.margin>
+            <Insets top="30.0" />
+         </BorderPane.margin>
+         <children>
+            <TableView fx:id="dijeloviTable" prefHeight="390.0" prefWidth="746.0" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="1" GridPane.rowSpan="2">
+               <columns>
+                  <TableColumn fx:id="kataloskiBrojColumn" prefWidth="85.60000765323639" text="Kataloški broj" />
+                  <TableColumn fx:id="modelAutaColumn" prefWidth="161.60002899169922" text="Model auta" />
+                  <TableColumn fx:id="nazivDijelaColumn" prefWidth="233.5999755859375" text="Naziv" />
+                  <TableColumn fx:id="proizvodacDijelaColumn" prefWidth="93.60000610351562" text="Proizvođač" />
+                  <TableColumn fx:id="cijenaDijelaColumn" prefWidth="119.199951171875" text="Cijena" />
+               </columns>
+            </TableView>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

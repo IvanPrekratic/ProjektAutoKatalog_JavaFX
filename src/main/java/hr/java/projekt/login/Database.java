@@ -1,11 +1,14 @@
 package hr.java.projekt.login;
 
+import hr.java.projekt.entiteti.Car;
+import hr.java.projekt.entiteti.CarPart;
+import hr.java.projekt.iznimke.BazaPodatakaException;
+
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.Properties;
+import java.math.BigDecimal;
+import java.sql.*;
+import java.util.*;
 
 public interface Database {
 
@@ -29,4 +32,73 @@ public interface Database {
         return conn;
     }
 
+    static List<Car> dohvatiAute() throws BazaPodatakaException {
+        List<Car> carList = new ArrayList<>();
+
+        try (Connection veza = connectingToDatabase()) {
+            Statement upit = veza.createStatement();
+            ResultSet resultSet = upit.executeQuery("SELECT * FROM AUTI");
+
+            while (resultSet.next()) {
+                Integer id = resultSet.getInt("id");
+                String marka = resultSet.getString("marka");
+                String model = resultSet.getString("model");
+
+                carList.add(new Car(id, marka, model));
+            }
+        } catch (SQLException | IOException | ClassNotFoundException ex) {
+            String poruka = "Došlo je do pogreške u radu s bazom podataka";
+            throw new BazaPodatakaException(poruka, ex);
+        }
+
+        return carList;
+    }
+
+    static List<CarPart> dohvatiDijelove() throws BazaPodatakaException {
+        List<CarPart> listaDijelova = new ArrayList<>();
+        try (Connection veza = connectingToDatabase()) {
+            Statement upit = veza.createStatement();
+            ResultSet resultSet = upit.executeQuery("SELECT * FROM DIJELOVI");
+
+            List<Car> allCars = dohvatiAute();
+
+            while (resultSet.next()) {
+                Integer id = resultSet.getInt("id");
+                Integer autoID = resultSet.getInt("auto_id");
+                String kataloskiBroj = resultSet.getString("kataloski_broj");
+                String naziv = resultSet.getString("naziv");
+                String kategorija = resultSet.getString("kategorija");
+                String proizvodac = resultSet.getString("proizvodac");
+                Integer dostupnost = resultSet.getInt("dostupnost");
+                Double cijena = resultSet.getDouble("cijena");
+
+                Car c = null;
+                for (Car car : allCars) {
+                    if(car.getId().toString().equals(autoID.toString()))
+                        c = car;
+                }
+
+                CarPart part = new CarPart(id, naziv, kategorija, c, proizvodac, kataloskiBroj, cijena, dostupnost);
+                listaDijelova.add(part);
+            }
+        } catch (SQLException | IOException | ClassNotFoundException ex) {
+            String poruka = "Došlo je do pogreške u radu s bazom podataka";
+            throw new BazaPodatakaException(poruka, ex);
+        }
+
+        return listaDijelova;
+    }
+
+    static void azurirajStanje(CarPart proizvod, Integer promjena) throws BazaPodatakaException {
+        try (Connection veza = connectingToDatabase()) {
+            PreparedStatement statement = veza.prepareStatement("update DIJELOVI set DOSTUPNOST = ? where ID = ?");
+            statement.setInt(1, proizvod.getPartStock()-promjena);
+            statement.setInt(2, proizvod.getId());
+
+        } catch (SQLException | IOException | ClassNotFoundException ex) {
+            String poruka = "Došlo je do pogreške u radu s bazom podataka";
+            throw new BazaPodatakaException(poruka, ex);
+        }
+
+    }
 }

@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
-   <center>
-      <Label text="Label" BorderPane.alignment="CENTER" />
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+    <fx:include source="menuBar.fxml" />
+    <center>
+      <GridPane prefWidth="794.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="233.59998779296876" minHeight="10.0" prefHeight="221.59998779296876" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="364.00001220703126" minHeight="10.0" prefHeight="203.00001220703126" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="174.39997558593757" minHeight="10.0" prefHeight="165.59998779296882" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <BorderPane.margin>
+            <Insets top="30.0" />
+         </BorderPane.margin>
+      </GridPane>
    </center>
 </BorderPane>

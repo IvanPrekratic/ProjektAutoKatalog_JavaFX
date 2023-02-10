@@ -4,14 +4,11 @@ import java.io.IOException;
 import java.sql.*;
 
 public class LoginPristupBazi{
-    public static String autentikacija(LoginPodaci podaci){
-        String username = podaci.getUsername();
-        String password = podaci.getPassword();
+    public static String autentikacija(String username, int hash){
         String endRole = "";
 
-
         String userNameDB;
-        String passwordDB;
+        int hashDB;
         String roleDB;
 
         try(Connection veza = Database.connectingToDatabase()){
@@ -20,12 +17,12 @@ public class LoginPristupBazi{
             while (rs.next()){
                 int id = rs.getInt("id");
                 userNameDB = rs.getString("username");
-                passwordDB = rs.getString("password");
+                hashDB = rs.getInt("password");
                 roleDB = rs.getString("role");
 
-                if(username.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("Admin"))
+                if(username.equals(userNameDB) && (hash == hashDB) && roleDB.equals("Admin"))
                     endRole = "Admin";
-                else if(username.equals(userNameDB) && password.equals(passwordDB) && roleDB.equals("User"))
+                else if(username.equals(userNameDB) && (hash == hashDB) && roleDB.equals("User"))
                     endRole = "User";
             }
         } catch (SQLException | IOException e) {

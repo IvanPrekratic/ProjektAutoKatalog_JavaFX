@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.java.projekt.glavna.controllers.MenuBarController">
+   <children>
+      <MenuBar maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="800.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Račun">
+            <items>
+              <MenuItem fx:id="odjava" mnemonicParsing="false" onAction="#odjaviMe" text="Odjava" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Proizvodi">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#proizvodiPoKategoriji" text="Po kategoriji" />
+                  <MenuItem mnemonicParsing="false" text="Po vozilu" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Košarica">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#uKosaricu" text="U košaricu" />
+                  <MenuItem mnemonicParsing="false" text="Izvezi košaricu" />
+            </items>
+          </Menu>
+          <Menu fx:id="urediInventar" mnemonicParsing="false" text="Uredi inventar">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Dodaj proizvod" />
+                  <MenuItem mnemonicParsing="false" text="Ukloni proizvod" />
+                  <MenuItem mnemonicParsing="false" text="Promjeni stanje na skladištu" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

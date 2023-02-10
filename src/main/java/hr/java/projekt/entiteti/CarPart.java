@@ -1,23 +1,19 @@
 package hr.java.projekt.entiteti;
 
-import java.math.BigDecimal;
-
-public class CarPart extends Car {
+public class CarPart extends Item{
     private Car car;
-    private String partName;
-    private String partCategory;
     private String partManufactor;
     private String partNumber;
-    private BigDecimal partPrice;
+    private Double partPrice;
+    private Integer partStock;
 
-    public CarPart(String make, String model, Car car, String partName, String partCategory, String partManufactor, String partNumber, BigDecimal partPrice) {
-        super(make, model);
+    public CarPart(Integer id, String name, String category, Car car, String partManufactor, String partNumber, Double partPrice, Integer partStock) {
+        super(id, name, category);
         this.car = car;
-        this.partName = partName;
-        this.partCategory = partCategory;
         this.partManufactor = partManufactor;
         this.partNumber = partNumber;
         this.partPrice = partPrice;
+        this.partStock = partStock;
     }
 
     public Car getCar() {
@@ -26,22 +22,6 @@ public class CarPart extends Car {
 
     public void setCar(Car car) {
         this.car = car;
-    }
-
-    public String getPartName() {
-        return partName;
-    }
-
-    public void setPartName(String partName) {
-        this.partName = partName;
-    }
-
-    public String getPartCategory() {
-        return partCategory;
-    }
-
-    public void setPartCategory(String partCategory) {
-        this.partCategory = partCategory;
     }
 
     public String getPartManufactor() {
@@ -60,11 +40,20 @@ public class CarPart extends Car {
         this.partNumber = partNumber;
     }
 
-    public BigDecimal getPartPrice() {
+    public Double getPartPrice() {
         return partPrice;
     }
 
-    public void setPartPrice(BigDecimal partPrice) {
+    public void setPartPrice(Double partPrice) {
         this.partPrice = partPrice;
     }
+
+    public Integer getPartStock() {
+        return partStock;
+    }
+
+    public void setPartStock(Integer partStock) {
+        this.partStock = partStock;
+    }
+
 }

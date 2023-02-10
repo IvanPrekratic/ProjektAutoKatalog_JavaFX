@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.java.projekt.glavna.controllers.KategorijeDijelovaController">
+   <fx:include source="menuBar.fxml" />
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="137.59998168945313" minHeight="10.0" prefHeight="115.59999389648438" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="229.59999694824216" minHeight="10.0" prefHeight="169.20000610351565" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="212.00001831054686" minHeight="10.0" prefHeight="159.19997558593752" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="124.80002441406248" minHeight="10.0" prefHeight="124.80002441406248" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <BorderPane.margin>
+            <Insets top="30.0" />
+         </BorderPane.margin>
+         <children>
+            <ImageView fx:id="motor" fitHeight="94.0" fitWidth="115.0" onMouseClicked="#prikaziDijeloveMotora" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="file:/C:/Java%20projects/ProjektAutoKatalog_JavaFX/img/engine.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="karoserija" fitHeight="88.0" fitWidth="115.0" onMouseClicked="#prikaziDijeloveKaroserije" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="file:/C:/Java%20projects/ProjektAutoKatalog_JavaFX/img/sasija.png" />
+               </image>
+            </ImageView>
+            <Label text="Motor" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="15.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Karoserija" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="15.0" />
+               </GridPane.margin>
+            </Label>
+            <ImageView fx:id="kocnice" fitHeight="88.0" fitWidth="115.0" onMouseClicked="#prikaziDijeloveKocnica" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="file:/C:/Java%20projects/ProjektAutoKatalog_JavaFX/img/kocnice.png" />
+               </image>
+            </ImageView>
+            <Label text="Kočnice" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="15.0" />
+               </GridPane.margin>
+            </Label>
+            <ImageView fx:id="ovjesIUpravljanje" fitHeight="88.0" fitWidth="115.0" onMouseClicked="#prikaziDijeloveOvjesaIUpravljanja" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="file:/C:/Java%20projects/ProjektAutoKatalog_JavaFX/img/ovjes.png" />
+               </image>
+            </ImageView>
+            <Label text="Ovjes i upravljanje" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="15.0" />
+               </GridPane.margin>
+            </Label>
+            <ImageView fx:id="elektronika" fitHeight="94.0" fitWidth="115.0" layoutX="153.0" layoutY="330.0" onMouseClicked="#prikaziDijeloveElektronike" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="file:/C:/Java%20projects/ProjektAutoKatalog_JavaFX/img/struja.png" />
+               </image>
+            </ImageView>
+            <Label text="Elektronika" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="15.0" />
+               </GridPane.margin>
+            </Label>
+            <ImageView fx:id="uljaIAntifriz" fitHeight="94.0" fitWidth="115.0" onMouseClicked="#prikaziUljaIAntifiz" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="file:/C:/Java%20projects/ProjektAutoKatalog_JavaFX/img/ulje.png" />
+               </image>
+            </ImageView>
+            <Label text="Ulja i antifriz" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="15.0" />
+               </GridPane.margin>
+            </Label>
+            <ImageView fx:id="osovinaIPrijenos" fitHeight="94.0" fitWidth="115.0" onMouseClicked="#prikaziDijeloveOsovineIPrijenosa" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="file:/C:/Java%20projects/ProjektAutoKatalog_JavaFX/img/prijenos.png" />
+               </image>
+            </ImageView>
+            <Label text="Osovina i prijenos" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="15.0" />
+               </GridPane.margin>
+            </Label>
+            <ImageView fx:id="hladenje" fitHeight="94.0" fitWidth="115.0" onMouseClicked="#prikaziDijeloveHladenja" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="file:/C:/Java%20projects/ProjektAutoKatalog_JavaFX/img/hladnjak.png" />
+               </image>
+            </ImageView>
+            <Label text="Hlađenje" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="15.0" />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER" prefHeight="27.0" prefWidth="228.0" text="KATEGORIJE DIJELOVA" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="20.0" />
+               </GridPane.margin>
+            </Label>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>
