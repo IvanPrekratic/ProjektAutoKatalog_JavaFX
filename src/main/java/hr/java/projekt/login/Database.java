@@ -101,4 +101,64 @@ public interface Database {
         }
 
     }
+    static List<String> dohvatiMarke(List<CarPart> lista){
+        Boolean postoji = false;
+        List<String> marke = new ArrayList<>();
+        marke.add("");
+        for (CarPart c : lista) {
+            String make = c.getCar().getMake();
+            for (int i=0;i < marke.size();i++)
+                if (marke.get(i).equals(make))
+                    postoji = true;
+            if (!postoji)
+                marke.add(make);
+            postoji = false;
+        }
+        return marke;
+    }
+    static List<String> dohvatiModele(List<CarPart> lista){
+        Boolean postoji = false;
+        List<String> modeli = new ArrayList<>();
+        modeli.add("");
+        for (CarPart c : lista) {
+            String model = c.getCar().getModel();
+            for (int i=0;i < modeli.size();i++)
+                if (modeli.get(i).equals(model))
+                    postoji = true;
+            if (!postoji)
+                modeli.add(model);
+            postoji = false;
+        }
+        return modeli;
+    }
+    static List<String> dohvatiKategorije(List<CarPart> lista){
+        Boolean postoji = false;
+        List<String> kategorije = new ArrayList<>();
+        kategorije.add("");
+        for (CarPart c : lista) {
+            String kategorija = c.getCategory();
+            for (int i=0;i < kategorije.size();i++)
+                if (kategorije.get(i).equals(kategorija))
+                    postoji = true;
+            if (!postoji)
+                kategorije.add(kategorija);
+            postoji = false;
+        }
+        return kategorije;
+    }
+    static List<String> dohvatiProizvodace(List<CarPart> lista){
+        Boolean postoji = false;
+        List<String> proizvodaci = new ArrayList<>();
+        proizvodaci.add("");
+        for (CarPart c : lista) {
+            String proizvodac = c.getPartManufactor();
+            for (int i=0;i < proizvodaci.size();i++)
+                if (proizvodaci.get(i).equals(proizvodac))
+                    postoji = true;
+            if (!postoji)
+                proizvodaci.add(proizvodac);
+            postoji = false;
+        }
+        return proizvodaci;
+    }
 }

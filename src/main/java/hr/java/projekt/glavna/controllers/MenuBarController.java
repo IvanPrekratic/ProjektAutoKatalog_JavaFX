@@ -25,7 +25,7 @@ public class MenuBarController {
     public void odjaviMe(){
         SessionMenager.username = null;
         SessionMenager.role = null;
-        Kosarica.proizvodi.clear();
+        PrikazDijelovaController.kosarica.ocistiKosaricu();
         GridPane root;
         try {
             root = FXMLLoader.load(getClass().getResource("/pocetni-view.fxml"));

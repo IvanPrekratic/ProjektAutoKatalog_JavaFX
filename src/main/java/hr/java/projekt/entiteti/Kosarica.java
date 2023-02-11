@@ -7,34 +7,20 @@ import java.util.List;
 
 public class Kosarica {
 
-    public static List<CarPart> proizvodi = new ArrayList<>();
-    public static List<Integer> kolicina = new ArrayList<>();
-    private String user = SessionMenager.getUsername();
-
-    public Kosarica(List<CarPart> kosarica, List<Integer> kolicina) {
-        proizvodi = kosarica;
-        this.kolicina = kolicina;
-
-    }
+    private List<CartItem> elementi;
+    private String user;
 
     public Kosarica() {
+        this.elementi = new ArrayList<CartItem>();
         this.user = SessionMenager.getUsername();
     }
 
-    public List<CarPart> getProizvodi() {
-        return proizvodi;
+    public List<CartItem> getElementi() {
+        return elementi;
     }
 
-    public void setProizvodi(List<CarPart> proizvodi) {
-        this.proizvodi = proizvodi;
-    }
-
-    public List<Integer> getKolicina() {
-        return kolicina;
-    }
-
-    public void setKolicina(List<Integer> kolicina) {
-        this.kolicina = kolicina;
+    public void setElementi(List<CartItem> elementi) {
+        this.elementi = elementi;
     }
 
     public String getUser() {
@@ -43,5 +29,11 @@ public class Kosarica {
 
     public void setUser(String user) {
         this.user = user;
+    }
+    public void dodajElement(CartItem novi){
+        elementi.add(novi);
+    }
+    public void ocistiKosaricu(){
+        elementi.clear();
     }
 }

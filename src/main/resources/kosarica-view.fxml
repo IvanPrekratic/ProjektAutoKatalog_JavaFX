@@ -34,10 +34,11 @@
             <TableView fx:id="dijeloviTable" prefHeight="390.0" prefWidth="746.0" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="1" GridPane.rowSpan="2">
                <columns>
                   <TableColumn fx:id="kataloskiBrojColumn" prefWidth="85.60000765323639" text="Kataloški broj" />
-                  <TableColumn fx:id="modelAutaColumn" prefWidth="161.60002899169922" text="Model auta" />
-                  <TableColumn fx:id="nazivDijelaColumn" prefWidth="233.5999755859375" text="Naziv" />
-                  <TableColumn fx:id="proizvodacDijelaColumn" prefWidth="93.60000610351562" text="Proizvođač" />
-                  <TableColumn fx:id="cijenaDijelaColumn" prefWidth="119.199951171875" text="Cijena" />
+                  <TableColumn fx:id="modelAutaColumn" prefWidth="118.4000015258789" text="Model auta" />
+                  <TableColumn fx:id="nazivDijelaColumn" prefWidth="234.4000244140625" text="Naziv" />
+                  <TableColumn fx:id="proizvodacDijelaColumn" prefWidth="95.99996948242188" text="Proizvođač" />
+                  <TableColumn fx:id="cijenaDijelaColumn" prefWidth="128.7999267578125" text="Cijena" />
+                  <TableColumn fx:id="narucenaKolicina" prefWidth="55.199951171875" text="Količina" />
                </columns>
             </TableView>
          </children>
