@@ -24,4 +24,5 @@ public class CartItem {
     public void setKolicina(Integer kolicina) {
         this.kolicina = kolicina;
     }
+
 }

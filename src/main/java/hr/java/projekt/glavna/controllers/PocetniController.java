@@ -5,6 +5,7 @@ import hr.java.projekt.login.LoginPristupBazi;
 import hr.java.projekt.login.SessionMenager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
@@ -24,25 +25,36 @@ public class PocetniController {
         String pass = passwordField.getText();
         int hash = pass.hashCode();
 
+
         String role = LoginPristupBazi.autentikacija(username, hash);
-        SessionMenager.setRole(role);
-        SessionMenager.setUsername(username);
-        if(SessionMenager.getRole().equals("Admin")) {
-            BorderPane root;
-            try {
-                root = FXMLLoader.load(getClass().getResource("/admin-pocetni-view.fxml"));
-                AutoKatalog.setMainPage(root);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else if (SessionMenager.getRole().equals("User")) {
-            BorderPane root;
-            try {
-                root = FXMLLoader.load(getClass().getResource("/kategorije-dijelova-view.fxml"));
-                AutoKatalog.setMainPage(root);
-            } catch (IOException e) {
-                e.printStackTrace();
+        if (role.equals("")){
+            String errorMessage = "Krivi podaci za prijavu!";
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Pogresan unos podataka!");
+            alert.setContentText(errorMessage);
+            alert.show();
+        }
+        else {
+            SessionMenager.setRole(role);
+            SessionMenager.setUsername(username);
+            if(SessionMenager.getRole().equals("Admin")) {
+                BorderPane root;
+                try {
+                    root = FXMLLoader.load(getClass().getResource("/admin-pocetni-view.fxml"));
+                    AutoKatalog.setMainPage(root);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else if (SessionMenager.getRole().equals("User")) {
+                BorderPane root;
+                try {
+                    root = FXMLLoader.load(getClass().getResource("/kategorije-dijelova-view.fxml"));
+                    AutoKatalog.setMainPage(root);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
+
     }
 }

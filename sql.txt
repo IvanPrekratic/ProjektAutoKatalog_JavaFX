@@ -37,3 +37,15 @@ PRIMARY KEY(id)
 );
 
 INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) VALUES (1, 'Komplet kočionih obloga', 'kocnice', 'Febi Bilstein', '41 06 021 92R', 17.75, 26);
+
+CREATE TABLE kosarica(
+id int NOT NULL GENERATED ALWAYS AS IDENTITY,
+user_id int NOT NULL,
+naziv VARCHAR(30) NOT NULL,
+kategorija VARCHAR(30) NOT NULL,
+proizvodac VARCHAR(30) NOT NULL,
+kataloski_broj VARCHAR(30) NOT NULL,
+cijena double NOT NULL,
+dostupnost int NOT NULL,
+PRIMARY KEY(id)
+);

@@ -85,7 +85,6 @@ public interface Database {
             String poruka = "Došlo je do pogreške u radu s bazom podataka";
             throw new BazaPodatakaException(poruka, ex);
         }
-
         return listaDijelova;
     }
 
@@ -94,6 +93,7 @@ public interface Database {
             PreparedStatement statement = veza.prepareStatement("update DIJELOVI set DOSTUPNOST = ? where ID = ?");
             statement.setInt(1, proizvod.getPartStock()-promjena);
             statement.setInt(2, proizvod.getId());
+            statement.executeUpdate();
 
         } catch (SQLException | IOException | ClassNotFoundException ex) {
             String poruka = "Došlo je do pogreške u radu s bazom podataka";
@@ -114,6 +114,7 @@ public interface Database {
                 marke.add(make);
             postoji = false;
         }
+        marke.sort(String::compareToIgnoreCase);
         return marke;
     }
     static List<String> dohvatiModele(List<CarPart> lista){
@@ -129,6 +130,7 @@ public interface Database {
                 modeli.add(model);
             postoji = false;
         }
+        modeli.sort(String::compareToIgnoreCase);
         return modeli;
     }
     static List<String> dohvatiKategorije(List<CarPart> lista){
@@ -144,6 +146,7 @@ public interface Database {
                 kategorije.add(kategorija);
             postoji = false;
         }
+        kategorije.sort(String::compareToIgnoreCase);
         return kategorije;
     }
     static List<String> dohvatiProizvodace(List<CarPart> lista){
@@ -159,6 +162,7 @@ public interface Database {
                 proizvodaci.add(proizvodac);
             postoji = false;
         }
+        proizvodaci.sort(String::compareToIgnoreCase);
         return proizvodaci;
     }
 }

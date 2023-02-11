@@ -32,7 +32,7 @@ public class KategorijeDijelovaController {
         BorderPane root;
         try {
             filter = "motor";
-            root = FXMLLoader.load(getClass().getResource("/admin-pocetni-view.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/prikaz-dijelova-view.fxml"));
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
             e.printStackTrace();
@@ -42,7 +42,7 @@ public class KategorijeDijelovaController {
         BorderPane root;
         try {
             filter = "karoserija";
-            root = FXMLLoader.load(getClass().getResource("/admin-pocetni-view.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/prikaz-dijelova-view.fxml"));
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
             e.printStackTrace();
@@ -62,7 +62,7 @@ public class KategorijeDijelovaController {
         BorderPane root;
         try {
             filter = "ovjesIUpravljanje";
-            root = FXMLLoader.load(getClass().getResource("/admin-pocetni-view.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/prikaz-dijelova-view.fxml"));
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
             e.printStackTrace();
@@ -72,7 +72,7 @@ public class KategorijeDijelovaController {
         BorderPane root;
         try {
             filter = "elektronika";
-            root = FXMLLoader.load(getClass().getResource("/admin-pocetni-view.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/prikaz-dijelova-view.fxml"));
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
             e.printStackTrace();
@@ -82,7 +82,7 @@ public class KategorijeDijelovaController {
         BorderPane root;
         try {
             filter = "uljeIAntifriz";
-            root = FXMLLoader.load(getClass().getResource("/admin-pocetni-view.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/prikaz-dijelova-view.fxml"));
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
             e.printStackTrace();
@@ -92,7 +92,7 @@ public class KategorijeDijelovaController {
         BorderPane root;
         try {
             filter = "osovinaIPrijenos";
-            root = FXMLLoader.load(getClass().getResource("/admin-pocetni-view.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/prikaz-dijelova-view.fxml"));
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
             e.printStackTrace();
@@ -102,7 +102,7 @@ public class KategorijeDijelovaController {
         BorderPane root;
         try {
             filter = "hladenje";
-            root = FXMLLoader.load(getClass().getResource("/admin-pocetni-view.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/prikaz-dijelova-view.fxml"));
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
             e.printStackTrace();

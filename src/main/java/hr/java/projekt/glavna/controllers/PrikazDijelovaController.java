@@ -1,5 +1,6 @@
 package hr.java.projekt.glavna.controllers;
 
+import hr.java.projekt.entiteti.Car;
 import hr.java.projekt.entiteti.CarPart;
 import hr.java.projekt.entiteti.CartItem;
 import hr.java.projekt.entiteti.Kosarica;
@@ -63,7 +64,12 @@ public class PrikazDijelovaController {
     List<CarPart> zaKosaricu = new ArrayList<>();
 
     public void initialize() throws BazaPodatakaException {
-        dijelovi = Database.dohvatiDijelove();
+        if(KategorijeDijelovaController.filter != null){
+            dijelovi = Database.dohvatiDijelove();
+            dijelovi = filter(dijelovi);
+        }
+        else
+            dijelovi = Database.dohvatiDijelove();
         filtriraniDijeloviGlavni = dijelovi;
 
         markeAuta = Database.dohvatiMarke(dijelovi);
@@ -84,6 +90,7 @@ public class PrikazDijelovaController {
         markaBox.setItems(listaZaMarke);
         markaBox.setPromptText("Odaberi marku");
 
+
         ObservableList<String> listaZaModele = FXCollections.observableArrayList(modeliAuta);
         modelBox.setItems(listaZaModele);
         modelBox.setPromptText("Odaberi model");
@@ -97,8 +104,8 @@ public class PrikazDijelovaController {
         proizvodacBox.setPromptText("Odaberi proizvodaca");
     }
 
-    public void filter(){
-
+    public List<CarPart> filter(List<CarPart> dijelovi){
+         return dijelovi.stream().filter(part -> part.getCategory().equals(KategorijeDijelovaController.filter)).collect(Collectors.toList());
     }
 
     public void dodajUKosaricu() throws BazaPodatakaException {
@@ -106,20 +113,22 @@ public class PrikazDijelovaController {
         CarPart novi = dijeloviTable.getSelectionModel().getSelectedItem();
         Integer broj = Integer.parseInt(brKomada.getText());
 
-
         for (CartItem itm: PrikazDijelovaController.kosarica.getElementi()) {
-            if(itm.getProizvod().equals(novi)) {
+            if(itm.getProizvod().getPartNumber().equals(novi.getPartNumber())) {
                 Integer stara = itm.getKolicina();
                 itm.setKolicina(stara + broj);
                 postoji = true;
                 Database.azurirajStanje(novi, broj);
             }
         }
+
         if(!postoji){
             CartItem oznaceni = new CartItem(novi, broj);
             PrikazDijelovaController.kosarica.dodajElement(oznaceni);
             Database.azurirajStanje(novi, broj);
         }
+
+        dijeloviTable.refresh();
     }
     public void filtrirajMarke(){
         List<CarPart> filtriraniDijelovi;
@@ -204,5 +213,20 @@ public class PrikazDijelovaController {
         dijeloviTable.setItems(observableListFiltriraniDijelovi);
         filtrirano = true;
         filtriraniDijeloviGlavni = filtriraniDijelovi;
+    }
+    public void ponistiFiltriranje(){
+        proizvodacBox.setValue("");
+        markaBox.setValue("");
+        modelBox.setValue("");
+        kategorijaBox.setValue("");
+
+        ObservableList<CarPart> observableListDijelovi = FXCollections.observableArrayList(dijelovi);
+        kataloskiBrojColumn.setCellValueFactory(dijelovi -> new SimpleStringProperty(dijelovi.getValue().getPartNumber()));
+        modelAutaColumn.setCellValueFactory(dijelovi -> new SimpleStringProperty(dijelovi.getValue().getCar().getMake() + " " + dijelovi.getValue().getCar().getModel()));
+        nazivDijelaColumn.setCellValueFactory(dijelovi -> new SimpleStringProperty(dijelovi.getValue().getName()));
+        proizvodacDijelaColumn.setCellValueFactory(dijelovi -> new SimpleStringProperty(dijelovi.getValue().getPartManufactor()));
+        dostupnoKomadaColumn.setCellValueFactory(dijelovi -> new SimpleIntegerProperty(dijelovi.getValue().getPartStock()).asObject());
+        cijenaDijelaColumn.setCellValueFactory(dijelovi -> new SimpleDoubleProperty(dijelovi.getValue().getPartPrice()).asObject());
+        dijeloviTable.setItems(observableListDijelovi);
     }
 }

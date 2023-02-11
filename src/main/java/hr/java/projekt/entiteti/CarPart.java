@@ -55,5 +55,11 @@ public class CarPart extends Item{
     public void setPartStock(Integer partStock) {
         this.partStock = partStock;
     }
+    public boolean isti(CarPart drugi) {
+        if (this.equals(drugi))
+            return true;
+        else
+            return false;
+    }
 
 }

@@ -30,7 +30,6 @@ public class LoginPristupBazi{
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-
         return endRole;
     }
 }
