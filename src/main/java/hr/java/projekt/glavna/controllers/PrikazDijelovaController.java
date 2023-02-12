@@ -13,11 +13,11 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.*;
+import javafx.scene.layout.BorderPane;
 
+import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +26,10 @@ import java.util.stream.Collectors;
 public class PrikazDijelovaController {
 
     public static Kosarica kosarica = new Kosarica();
+    @FXML
+    private Button dodajUKosaricuButton;
+    @FXML
+    private Label komadaLabel;
     @FXML
     private ComboBox markaBox;
     @FXML
@@ -51,19 +55,28 @@ public class PrikazDijelovaController {
     @FXML
     private TableColumn<CarPart, Double> cijenaDijelaColumn;
 
-
-
-    List<CarPart> dijelovi = null;
-    List<CarPart> filtriraniDijeloviGlavni;
-    Boolean filtrirano = false;
-    List<String> markeAuta;
-    List<String> modeliAuta;
-    List<String> kategorjeDijelova;
-    List<String> proizvodaciDijelova;
-
-    List<CarPart> zaKosaricu = new ArrayList<>();
+    public static List<CarPart> dijelovi = null;
+    public List<CarPart> filtriraniDijeloviGlavni;
+    private Boolean filtrirano = false;
+    private List<String> markeAuta;
+    private List<String> modeliAuta;
+    private List<String> kategorjeDijelova;
+    private List<String> proizvodaciDijelova;
 
     public void initialize() throws BazaPodatakaException {
+        dijeloviTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) ->
+        {
+            if (newValue != null) {
+                dodajUKosaricuButton.setVisible(true);
+                komadaLabel.setVisible(true);
+                brKomada.setVisible(true);
+            }
+            else {
+                dodajUKosaricuButton.setVisible(false);
+                komadaLabel.setVisible(false);
+                brKomada.setVisible(false);
+            }
+        });
         if(KategorijeDijelovaController.filter != null){
             dijelovi = Database.dohvatiDijelove();
             dijelovi = filter(dijelovi);
@@ -118,17 +131,29 @@ public class PrikazDijelovaController {
                 Integer stara = itm.getKolicina();
                 itm.setKolicina(stara + broj);
                 postoji = true;
-                Database.azurirajStanje(novi, broj);
+                Database.smanjiStanje(novi, broj);
             }
         }
 
         if(!postoji){
             CartItem oznaceni = new CartItem(novi, broj);
             PrikazDijelovaController.kosarica.dodajElement(oznaceni);
-            Database.azurirajStanje(novi, broj);
+            Database.smanjiStanje(novi, broj);
         }
-
+        if(KategorijeDijelovaController.filter != null){
+            dijelovi = Database.dohvatiDijelove();
+            dijelovi = filter(dijelovi);
+        }
+        else
+            dijelovi = Database.dohvatiDijelove();
         dijeloviTable.refresh();
+        BorderPane root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/prikaz-dijelova-view.fxml"));
+            AutoKatalog.setMainPage(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     public void filtrirajMarke(){
         List<CarPart> filtriraniDijelovi;

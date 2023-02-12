@@ -1,6 +1,7 @@
 package hr.java.projekt.glavna.controllers;
 
 import hr.java.projekt.entiteti.Kosarica;
+import hr.java.projekt.entiteti.StvoriDokument;
 import hr.java.projekt.glavna.AutoKatalog;
 import hr.java.projekt.login.SessionMenager;
 import javafx.fxml.FXML;
@@ -52,5 +53,8 @@ public class MenuBarController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public void izveziKosaricu(){
+        StvoriDokument.stvoriDokument(PrikazDijelovaController.kosarica.getElementi());
     }
 }

@@ -2,6 +2,7 @@ module hr.java.projekt.projektautokatalog_javafx {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires itextpdf;
 
 
     exports hr.java.projekt.glavna;

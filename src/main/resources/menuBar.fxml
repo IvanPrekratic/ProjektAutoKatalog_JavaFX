@@ -23,7 +23,7 @@
           <Menu mnemonicParsing="false" text="Košarica">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#uKosaricu" text="U košaricu" />
-                  <MenuItem mnemonicParsing="false" text="Izvezi košaricu" />
+                  <MenuItem mnemonicParsing="false" onAction="#izveziKosaricu" text="Izvezi košaricu" />
             </items>
           </Menu>
           <Menu fx:id="urediInventar" mnemonicParsing="false" text="Uredi inventar">

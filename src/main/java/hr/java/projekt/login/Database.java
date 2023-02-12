@@ -88,7 +88,7 @@ public interface Database {
         return listaDijelova;
     }
 
-    static void azurirajStanje(CarPart proizvod, Integer promjena) throws BazaPodatakaException {
+    static void smanjiStanje(CarPart proizvod, Integer promjena) throws BazaPodatakaException {
         try (Connection veza = connectingToDatabase()) {
             PreparedStatement statement = veza.prepareStatement("update DIJELOVI set DOSTUPNOST = ? where ID = ?");
             statement.setInt(1, proizvod.getPartStock()-promjena);
@@ -99,7 +99,18 @@ public interface Database {
             String poruka = "Došlo je do pogreške u radu s bazom podataka";
             throw new BazaPodatakaException(poruka, ex);
         }
+    }
+    static void povecajStanje(CarPart proizvod, Integer promjena) throws BazaPodatakaException {
+        try (Connection veza = connectingToDatabase()) {
+            PreparedStatement statement = veza.prepareStatement("update DIJELOVI set DOSTUPNOST = ? where ID = ?");
+            statement.setInt(1, proizvod.getPartStock()+promjena);
+            statement.setInt(2, proizvod.getId());
+            statement.executeUpdate();
 
+        } catch (SQLException | IOException | ClassNotFoundException ex) {
+            String poruka = "Došlo je do pogreške u radu s bazom podataka";
+            throw new BazaPodatakaException(poruka, ex);
+        }
     }
     static List<String> dohvatiMarke(List<CarPart> lista){
         Boolean postoji = false;

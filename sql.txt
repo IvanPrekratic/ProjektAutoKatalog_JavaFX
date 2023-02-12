@@ -27,7 +27,7 @@ INSERT INTO auti(marka, model) VALUES ('Toyota', 'Yaris');
 CREATE TABLE DIJELOVI(
 id int NOT NULL GENERATED ALWAYS AS IDENTITY,
 auto_id int NOT NULL,
-naziv VARCHAR(30) NOT NULL,
+naziv VARCHAR(50) NOT NULL,
 kategorija VARCHAR(30) NOT NULL,
 proizvodac VARCHAR(30) NOT NULL,
 kataloski_broj VARCHAR(30) NOT NULL,
@@ -49,3 +49,50 @@ cijena double NOT NULL,
 dostupnost int NOT NULL,
 PRIMARY KEY(id)
 );
+
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Filter ulja', 'uljeIAntifriz', 'Bosch', '77 01 206 705', 10.32, 8);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Filter ulja', 'uljeIAntifriz', 'Valeo', '77 00 126 705', 5.29, 13);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, '5W40 Shell Helix Ultra sin. ulje 1L', 'uljeIAntifriz', 'Shell', 'RN 0700 07', 9.30, 15);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, '5W40 Shell Helix Ultra sin. ulje 4L', 'uljeIAntifriz', 'Shell', 'RN 0700 08', 33.29, 6);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Antifriz konc. zeleni 1/1', 'uljeIAntifriz', 'Pena', 'AFNOR R15-601', 2.93, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Antifriz crveni G12+ (1L)', 'uljeIAntifriz', 'Pena', 'AFNOR G12-621', 3.30, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Brtva kartera ulja', 'motor', 'Ajusa', '77 00 866 465', 15.34, 3);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Brtva glave motora', 'motor', 'REINZ', '77 00 864 736', 18.83, 6);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Brtva ispušne grane', 'motor', 'REINZ', '77 00 866 689', 6.03, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Stražnji nosač motora', 'motor', 'MAXGEAR', '77 00 415 088', 13.53, 2);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Garnitura zupčastog remena', 'motor', 'SKF', '77 00 102 047', 26.70, 7);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Glavni far lijevi', 'karoserija', 'ALKAR', '77 01 045 168', 58.56, 2);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Ručica na vratima', 'karoserija', 'Topran', '77 00 842 847', 13.53, 3);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Plinska opruga prtljažnika', 'karoserija', 'MAGNETI', '77 00 842 847', 12.26, 4);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Kočioni disk', 'kocnice', 'BREMBO', '77 00 674 765', 23.72, 6);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Bubanj kočnica', 'kocnice', 'TRW', '77 00 419 824', 52.33, 4);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Kočiona tekućina DOT 4 500ml', 'kocnice', 'BREMBO', 'L04005', 5.16, 2);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Spiralna opruga', 'ovjesIUpravljanje', 'MAXGEAR', '77 00 417 226', 15.16, 4);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Amortizer', 'ovjesIUpravljanje', 'TRW', '77 00 426 693', 31.39, 4);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Krajnik', 'ovjesIUpravljanje', 'KAMOKA', '77 00 834 571', 8.36, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Selen upravljača', 'ovjesIUpravljanje', 'MOTAQUIP', '77 00 418 941', 6.63, 5);
+
+
+
+

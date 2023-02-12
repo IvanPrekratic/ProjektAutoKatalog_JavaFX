@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -16,16 +18,20 @@
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.19998168945312" minWidth="10.0" prefWidth="40.999993896484376" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="182.4000244140625" minWidth="10.0" prefWidth="181.60000610351562" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.4000244140625" minWidth="10.0" prefWidth="184.4000244140625" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.5999755859375" minWidth="10.0" prefWidth="133.39996337890625" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="162.79998779296875" minWidth="10.0" prefWidth="140.4000244140625" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.4000244140625" minWidth="10.0" prefWidth="140.0000122070312" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.2000732421875" minWidth="10.0" prefWidth="37.5999755859375" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="217.8000015258789" minHeight="10.0" prefHeight="48.80000762939454" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="398.199995803833" minHeight="10.0" prefHeight="232.59997558593753" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="408.40000000000003" minHeight="10.0" prefHeight="57.000018310546864" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="245.79995727539062" minHeight="0.0" prefHeight="228.19998168945312" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="217.8000015258789" minHeight="10.0" prefHeight="60.999996948242185" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="398.199995803833" minHeight="10.0" prefHeight="149.8000030517578" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="408.40000000000003" minHeight="10.0" prefHeight="117.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="245.79995727539062" minHeight="10.0" prefHeight="38.60000000000002" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="245.79995727539062" minHeight="0.0" prefHeight="43.999963378906216" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="245.79995727539062" minHeight="10.0" prefHeight="80.00003662109373" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="245.79995727539062" minHeight="10.0" prefHeight="61.60002441406249" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="245.79995727539062" minHeight="10.0" prefHeight="66.199951171875" vgrow="SOMETIMES" />
         </rowConstraints>
          <BorderPane.margin>
             <Insets top="30.0" />
@@ -37,10 +43,14 @@
                   <TableColumn fx:id="modelAutaColumn" prefWidth="118.4000015258789" text="Model auta" />
                   <TableColumn fx:id="nazivDijelaColumn" prefWidth="234.4000244140625" text="Naziv" />
                   <TableColumn fx:id="proizvodacDijelaColumn" prefWidth="95.99996948242188" text="Proizvođač" />
-                  <TableColumn fx:id="cijenaDijelaColumn" prefWidth="128.7999267578125" text="Cijena" />
-                  <TableColumn fx:id="narucenaKolicina" prefWidth="55.199951171875" text="Količina" />
+                  <TableColumn fx:id="cijenaDijelaColumn" prefWidth="120.800048828125" text="Cijena (EUR)" />
+                  <TableColumn fx:id="narucenaKolicina" prefWidth="63.199951171875" text="Količina" />
                </columns>
             </TableView>
+            <Button fx:id="makniButton" mnemonicParsing="false" onAction="#makniIzKosarice" text="Makni iz košarice" visible="false" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button mnemonicParsing="false" onAction="#izveziKosaricu" text="Izvezi košaricu" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Label text="Ukupno:" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+            <Label fx:id="ukupnoLabel" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
          </children>
       </GridPane>
    </center>

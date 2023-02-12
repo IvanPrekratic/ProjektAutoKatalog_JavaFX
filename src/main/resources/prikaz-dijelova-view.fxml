@@ -49,13 +49,13 @@
                   <TableColumn fx:id="cijenaDijelaColumn" prefWidth="77.5999755859375" text="Cijena" />
               </columns>
             </TableView>
-            <Button mnemonicParsing="false" onAction="#dodajUKosaricu" text="Dodaj u košaricu" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
-            <TextField fx:id="brKomada" prefHeight="26.0" prefWidth="126.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+            <Button fx:id="dodajUKosaricuButton" mnemonicParsing="false" onAction="#dodajUKosaricu" text="Dodaj u košaricu" visible="false" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+            <TextField fx:id="brKomada" prefHeight="26.0" prefWidth="126.0" visible="false" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                <GridPane.margin>
                   <Insets left="100.0" />
                </GridPane.margin>
             </TextField>
-            <Label text="Komada:" GridPane.columnIndex="4" GridPane.rowIndex="7">
+            <Label fx:id="komadaLabel" text="Komada:" visible="false" GridPane.columnIndex="4" GridPane.rowIndex="7">
                <GridPane.margin>
                   <Insets left="45.0" />
                </GridPane.margin>
