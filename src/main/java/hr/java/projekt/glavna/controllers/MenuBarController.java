@@ -78,7 +78,7 @@ public class MenuBarController {
     public void ukloniProizvod(){
         BorderPane root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/dodaj-proizvod-view.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/ukloni-proizvod-view.fxml"));
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
             e.printStackTrace();
@@ -87,7 +87,7 @@ public class MenuBarController {
     public void promjeniStanjeNaSkladistu(){
         BorderPane root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/dodaj-proizvod-view.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/promjena-stanja-view.fxml"));
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
             e.printStackTrace();

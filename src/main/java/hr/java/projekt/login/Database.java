@@ -237,4 +237,27 @@ public interface Database {
             throw new BazaPodatakaException(poruka, ex);
         }
     }
+    static void obrisiProizvod(Integer id) throws BazaPodatakaException {
+        try (Connection veza = connectingToDatabase()) {
+            PreparedStatement statement = veza.prepareStatement(
+                    "DELETE FROM DIJELOVI WHERE ID = ?");
+            statement.setInt(1, id);
+            statement.executeUpdate();
+        } catch (SQLException | IOException | ClassNotFoundException ex) {
+            String poruka = "Došlo je do pogreške u radu s bazom podataka";
+            throw new BazaPodatakaException(poruka, ex);
+        }
+    }
+    static void promijeniKolicinu(Integer id, Integer kolicina) throws BazaPodatakaException {
+        try (Connection veza = connectingToDatabase()) {
+            PreparedStatement statement = veza.prepareStatement(
+                    "UPDATE DIJELOVI SET DOSTUPNOST = ? WHERE ID = ?");
+            statement.setInt(1, kolicina);
+            statement.setInt(2,id);
+            statement.executeUpdate();
+        } catch (SQLException | IOException | ClassNotFoundException ex) {
+            String poruka = "Došlo je do pogreške u radu s bazom podataka";
+            throw new BazaPodatakaException(poruka, ex);
+        }
+    }
 }
