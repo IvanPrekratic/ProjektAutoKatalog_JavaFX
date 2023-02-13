@@ -108,9 +108,10 @@ public class PrikazDijelovaController {
         modelBox.setItems(listaZaModele);
         modelBox.setPromptText("Odaberi model");
 
-        ObservableList<String> listaZaKategorije = FXCollections.observableArrayList(kategorjeDijelova);
+        /*ObservableList<String> listaZaKategorije = FXCollections.observableArrayList(kategorjeDijelova);
         kategorijaBox.setItems(listaZaKategorije);
         kategorijaBox.setPromptText("Odaberi kategoriju");
+         */
 
         ObservableList<String> listaZaProizvodaca = FXCollections.observableArrayList(proizvodaciDijelova);
         proizvodacBox.setItems(listaZaProizvodaca);
@@ -197,27 +198,6 @@ public class PrikazDijelovaController {
         filtrirano = true;
         filtriraniDijeloviGlavni = filtriraniDijelovi;
     }
-    public void filtrirajKategorije(){
-        List<CarPart> filtriraniDijelovi;
-        if (kategorijaBox.getValue().toString().equals(""))
-            filtrirano = false;
-        if (filtrirano)
-            filtriraniDijelovi = filtriraniDijeloviGlavni;
-        else
-            filtriraniDijelovi = dijelovi;
-        filtriraniDijelovi = filtriraniDijelovi.stream().filter(dijelovi -> dijelovi.getCategory().contains(kategorijaBox.getValue().toString())).collect(Collectors.toList());
-        ObservableList<CarPart> observableListFiltriraniDijelovi = FXCollections.observableArrayList(filtriraniDijelovi);
-
-        kataloskiBrojColumn.setCellValueFactory(dijelovi -> new SimpleStringProperty(dijelovi.getValue().getPartNumber()));
-        modelAutaColumn.setCellValueFactory(dijelovi -> new SimpleStringProperty(dijelovi.getValue().getCar().getMake() + " " + dijelovi.getValue().getCar().getModel()));
-        nazivDijelaColumn.setCellValueFactory(dijelovi -> new SimpleStringProperty(dijelovi.getValue().getName()));
-        proizvodacDijelaColumn.setCellValueFactory(dijelovi -> new SimpleStringProperty(dijelovi.getValue().getPartManufactor()));
-        dostupnoKomadaColumn.setCellValueFactory(dijelovi -> new SimpleIntegerProperty(dijelovi.getValue().getPartStock()).asObject());
-        cijenaDijelaColumn.setCellValueFactory(dijelovi -> new SimpleDoubleProperty(dijelovi.getValue().getPartPrice()).asObject());
-        dijeloviTable.setItems(observableListFiltriraniDijelovi);
-        filtrirano = true;
-        filtriraniDijeloviGlavni = filtriraniDijelovi;
-    }
     public void filtrirajProizvodace(){
         List<CarPart> filtriraniDijelovi;
         if (proizvodacBox.getValue().toString().equals(""))
@@ -243,7 +223,6 @@ public class PrikazDijelovaController {
         proizvodacBox.setValue("");
         markaBox.setValue("");
         modelBox.setValue("");
-        kategorijaBox.setValue("");
 
         ObservableList<CarPart> observableListDijelovi = FXCollections.observableArrayList(dijelovi);
         kataloskiBrojColumn.setCellValueFactory(dijelovi -> new SimpleStringProperty(dijelovi.getValue().getPartNumber()));

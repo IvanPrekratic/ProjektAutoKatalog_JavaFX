@@ -7,6 +7,7 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import hr.java.projekt.glavna.AutoKatalog;
+import hr.java.projekt.glavna.controllers.KosaricaController;
 import hr.java.projekt.login.SessionMenager;
 
 import java.io.FileNotFoundException;
@@ -21,6 +22,9 @@ public class StvoriDokument {
 
         String[] headers = new String[]{"Kataloski broj", "Model auta", "Naziv proizvoda", "Kolicina", "Cijena (EUR)"};
         String[][] rows = new String[kosarica.size()][5];
+        String[] footer = new String[2];
+        footer[0] = "Ukupno: ";
+        footer[1] = KosaricaController.vrati;
 
         for (int i = 0; i< kosarica.size(); i++) {
             rows[i][0] = kosarica.get(i).getProizvod().getPartNumber();
@@ -33,7 +37,7 @@ public class StvoriDokument {
 
         Document document = new Document(PageSize.A4);
         try {
-            PdfWriter.getInstance(document, new FileOutputStream("Dokument.pdf"));
+            PdfWriter.getInstance(document, new FileOutputStream("Moja kosarica.pdf"));
             document.open();
             BaseFont courier = BaseFont.createFont(BaseFont.COURIER, BaseFont.CP1252, BaseFont.EMBEDDED);
             Font fontHeader = new Font(courier, 12, Font.BOLD);
@@ -55,6 +59,15 @@ public class StvoriDokument {
                 }
                 table.completeRow();
             }
+            PdfPCell cell = new PdfPCell();
+            cell.setColspan(4);
+            cell.setPhrase(new Phrase(footer[0], fontHeader));
+            table.addCell(cell);
+            cell.setColspan(1);
+            cell.setPhrase(new Phrase(footer[1], fontHeader));
+            table.addCell(cell);
+            table.completeRow();
+
             document.addAuthor(SessionMenager.username);
             document.addTitle("Ispis košarice");
             document.add(table);

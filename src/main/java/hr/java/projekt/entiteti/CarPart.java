@@ -2,18 +2,37 @@ package hr.java.projekt.entiteti;
 
 public class CarPart extends Item{
     private Car car;
+    private Integer id;
     private String partManufactor;
     private String partNumber;
     private Double partPrice;
     private Integer partStock;
 
-    public CarPart(Integer id, String name, String category, Car car, String partManufactor, String partNumber, Double partPrice, Integer partStock) {
-        super(id, name, category);
+    public CarPart(String name, String category, Car car, Integer id, String partManufactor, String partNumber, Double partPrice, Integer partStock) {
+        super(name, category);
+        this.car = car;
+        this.id = id;
+        this.partManufactor = partManufactor;
+        this.partNumber = partNumber;
+        this.partPrice = partPrice;
+        this.partStock = partStock;
+    }
+
+    public CarPart(String name, String category, Car car, String partManufactor, String partNumber, Double partPrice, Integer partStock) {
+        super(name, category);
         this.car = car;
         this.partManufactor = partManufactor;
         this.partNumber = partNumber;
         this.partPrice = partPrice;
         this.partStock = partStock;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Car getCar() {

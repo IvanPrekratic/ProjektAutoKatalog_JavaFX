@@ -54,7 +54,43 @@ public class MenuBarController {
             e.printStackTrace();
         }
     }
+    public void proizvodiPoVozilu(){
+        BorderPane root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/dijelovi-prema-vozilu-view.fxml"));
+            AutoKatalog.setMainPage(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void izveziKosaricu(){
         StvoriDokument.stvoriDokument(PrikazDijelovaController.kosarica.getElementi());
+    }
+    public void dodajProizvod(){
+        BorderPane root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/dodaj-proizvod-view.fxml"));
+            AutoKatalog.setMainPage(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void ukloniProizvod(){
+        BorderPane root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/dodaj-proizvod-view.fxml"));
+            AutoKatalog.setMainPage(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void promjeniStanjeNaSkladistu(){
+        BorderPane root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/dodaj-proizvod-view.fxml"));
+            AutoKatalog.setMainPage(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

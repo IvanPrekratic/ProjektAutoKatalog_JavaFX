@@ -17,7 +17,7 @@
             <Menu mnemonicParsing="false" text="Proizvodi">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#proizvodiPoKategoriji" text="Po kategoriji" />
-                  <MenuItem mnemonicParsing="false" text="Po vozilu" />
+                  <MenuItem mnemonicParsing="false" onAction="#proizvodiPoVozilu" text="Po vozilu" />
               </items>
             </Menu>
           <Menu mnemonicParsing="false" text="Košarica">
@@ -28,9 +28,9 @@
           </Menu>
           <Menu fx:id="urediInventar" mnemonicParsing="false" text="Uredi inventar">
             <items>
-              <MenuItem mnemonicParsing="false" text="Dodaj proizvod" />
-                  <MenuItem mnemonicParsing="false" text="Ukloni proizvod" />
-                  <MenuItem mnemonicParsing="false" text="Promjeni stanje na skladištu" />
+              <MenuItem mnemonicParsing="false" onAction="#dodajProizvod" text="Dodaj proizvod" />
+                  <MenuItem mnemonicParsing="false" onAction="#ukloniProizvod" text="Ukloni proizvod" />
+                  <MenuItem mnemonicParsing="false" onAction="#promjeniStanjeNaSkladistu" text="Promjeni stanje na skladištu" />
             </items>
           </Menu>
         </menus>

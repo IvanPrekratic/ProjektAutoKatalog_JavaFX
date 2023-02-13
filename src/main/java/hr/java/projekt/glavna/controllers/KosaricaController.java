@@ -42,6 +42,7 @@ public class KosaricaController {
     private TableColumn<CartItem, Double> cijenaDijelaColumn;
     @FXML
     private TableColumn<CartItem, Integer> narucenaKolicina;
+    public static String vrati;
 
 
     public void initialize() {
@@ -100,8 +101,10 @@ public class KosaricaController {
         for (CartItem itm: PrikazDijelovaController.kosarica.getElementi()) {
             ukupno+=itm.getProizvod().getPartPrice()*itm.getKolicina();
         }
-        if (ukupno != 0)
-            return (df.format(ukupno) + " EUR");
+        if (ukupno != 0){
+            vrati = df.format(ukupno) + " EUR";
+            return vrati;
+        }
         else
             return null;
     }

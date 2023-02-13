@@ -29,7 +29,7 @@ public class PocetniController {
         String role = LoginPristupBazi.autentikacija(username, hash);
         if (role.equals("")){
             String errorMessage = "Krivi podaci za prijavu!";
-            Alert alert = new Alert(Alert.AlertType.WARNING);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Pogresan unos podataka!");
             alert.setContentText(errorMessage);
             alert.show();

@@ -43,10 +43,10 @@
               <columns>
                 <TableColumn fx:id="kataloskiBrojColumn" prefWidth="85.60000765323639" text="Kataloški broj" />
                 <TableColumn fx:id="modelAutaColumn" prefWidth="161.60002899169922" text="Model auta" />
-                  <TableColumn fx:id="nazivDijelaColumn" prefWidth="233.5999755859375" text="Naziv" />
-                  <TableColumn fx:id="proizvodacDijelaColumn" prefWidth="93.60000610351562" text="Proizvođač" />
-                  <TableColumn fx:id="dostupnoKomadaColumn" prefWidth="68.79998779296875" text="Dostupno" />
-                  <TableColumn fx:id="cijenaDijelaColumn" prefWidth="77.5999755859375" text="Cijena" />
+                  <TableColumn fx:id="nazivDijelaColumn" prefWidth="231.99998474121094" text="Naziv" />
+                  <TableColumn fx:id="proizvodacDijelaColumn" prefWidth="100.800048828125" text="Proizvođač" />
+                  <TableColumn fx:id="dostupnoKomadaColumn" prefWidth="70.4000244140625" text="Dostupno" />
+                  <TableColumn fx:id="cijenaDijelaColumn" prefWidth="63.199951171875" text="Cijena" />
               </columns>
             </TableView>
             <Button fx:id="dodajUKosaricuButton" mnemonicParsing="false" onAction="#dodajUKosaricu" text="Dodaj u košaricu" visible="false" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
@@ -70,18 +70,13 @@
                   <Insets left="5.0" right="5.0" />
                </GridPane.margin>
             </ComboBox>
-            <ComboBox fx:id="kategorijaBox" onAction="#filtrirajKategorije" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
-               <GridPane.margin>
-                  <Insets left="5.0" right="5.0" />
-               </GridPane.margin>
-            </ComboBox>
-            <ComboBox fx:id="proizvodacBox" onAction="#filtrirajProizvodace" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+            <ComboBox fx:id="proizvodacBox" onAction="#filtrirajProizvodace" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="5.0" right="5.0" />
                </GridPane.margin>
             </ComboBox>
             <Label prefHeight="18.0" prefWidth="51.0" text="Filtriraj:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#ponistiFiltriranje" text="Poništi filter" GridPane.columnIndex="5" GridPane.rowIndex="2">
+            <Button mnemonicParsing="false" onAction="#ponistiFiltriranje" text="Poništi filter" GridPane.columnIndex="4" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>

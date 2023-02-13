@@ -2,7 +2,10 @@ package hr.java.projekt.login;
 
 import hr.java.projekt.entiteti.Car;
 import hr.java.projekt.entiteti.CarPart;
+import hr.java.projekt.glavna.AutoKatalog;
 import hr.java.projekt.iznimke.BazaPodatakaException;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.BorderPane;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -78,8 +81,9 @@ public interface Database {
                         c = car;
                 }
 
-                CarPart part = new CarPart(id, naziv, kategorija, c, proizvodac, kataloskiBroj, cijena, dostupnost);
-                listaDijelova.add(part);
+
+                CarPart novi = new CarPart(naziv,kategorija,c,id,proizvodac,kataloskiBroj,cijena,dostupnost);
+                listaDijelova.add(novi);
             }
         } catch (SQLException | IOException | ClassNotFoundException ex) {
             String poruka = "Došlo je do pogreške u radu s bazom podataka";
@@ -175,5 +179,62 @@ public interface Database {
         }
         proizvodaci.sort(String::compareToIgnoreCase);
         return proizvodaci;
+    }
+    static void dodajProizvod(CarPart proizvod, Integer auto_id) throws BazaPodatakaException {
+        try (Connection veza = connectingToDatabase()) {
+            PreparedStatement statement = veza.prepareStatement(
+                    "insert into DIJELOVI(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) " +
+                            "VALUES (?, ?, ?, ?, ?, ?, ?)");
+            statement.setInt(1, auto_id);
+            statement.setString(2, proizvod.getName());
+            statement.setString(3, proizvod.getCategory());
+            statement.setString(4, proizvod.getPartManufactor());
+            statement.setString(5, proizvod.getPartNumber());
+            statement.setDouble(6, proizvod.getPartPrice());
+            statement.setInt(7, proizvod.getPartStock());
+            statement.executeUpdate();
+
+        } catch (SQLException | IOException | ClassNotFoundException ex) {
+            String poruka = "Došlo je do pogreške u radu s bazom podataka";
+            throw new BazaPodatakaException(poruka, ex);
+        }
+    }
+    static void dodajNoviAuto(Car auto) throws BazaPodatakaException {
+        try (Connection veza = connectingToDatabase()) {
+            PreparedStatement statement = veza.prepareStatement(
+                    "insert into auti(marka, model) VALUES (?, ?)");
+            statement.setString(1, auto.getMake());
+            statement.setString(2, auto.getModel());
+            statement.executeUpdate();
+
+        } catch (SQLException | IOException | ClassNotFoundException ex) {
+            String poruka = "Došlo je do pogreške u radu s bazom podataka";
+            throw new BazaPodatakaException(poruka, ex);
+        }
+    }
+    static void dodajProizvodSNovimAutom(CarPart proizvod, Car auto) throws BazaPodatakaException {
+        List<Car> listaAuta = dohvatiAute();
+        Integer auto_id = -1;
+        for (Car c: listaAuta) {
+            if (c.getMake().equals(auto.getMake()) && c.getModel().equals(auto.getModel()))
+                auto_id =c.getId();
+        }
+        try (Connection veza = connectingToDatabase()) {
+            PreparedStatement statement = veza.prepareStatement(
+                    "insert into DIJELOVI(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) " +
+                            "VALUES (?, ?, ?, ?, ?, ?, ?)");
+            statement.setInt(1, auto_id);
+            statement.setString(2, proizvod.getName());
+            statement.setString(3, proizvod.getCategory());
+            statement.setString(4, proizvod.getPartManufactor());
+            statement.setString(5, proizvod.getPartNumber());
+            statement.setDouble(6, proizvod.getPartPrice());
+            statement.setInt(7, proizvod.getPartStock());
+            statement.executeUpdate();
+
+        } catch (SQLException | IOException | ClassNotFoundException ex) {
+            String poruka = "Došlo je do pogreške u radu s bazom podataka";
+            throw new BazaPodatakaException(poruka, ex);
+        }
     }
 }
