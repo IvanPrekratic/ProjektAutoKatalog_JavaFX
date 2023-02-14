@@ -1,22 +1,19 @@
 package hr.java.projekt.login;
 
+import com.itextpdf.text.log.Logger;
+import com.itextpdf.text.log.LoggerFactory;
 import hr.java.projekt.entiteti.Car;
 import hr.java.projekt.entiteti.CarPart;
-import hr.java.projekt.glavna.AutoKatalog;
 import hr.java.projekt.iznimke.BazaPodatakaException;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.BorderPane;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.sql.*;
 import java.util.*;
 
 public interface Database {
-
+    Logger logger = LoggerFactory.getLogger(Database.class);
     String DATABASE_FILE = "database.properties";
-
     static Connection connectingToDatabase() throws IOException, SQLException, ClassNotFoundException {
         Connection conn;
         try{
@@ -28,8 +25,10 @@ public interface Database {
             conn = DriverManager.getConnection(url, user, pass);
 
         }catch (IOException e){
+            logger.info("Problem kod spajanja s bazom podataka");
             throw new IOException("Error while reading properties file for DB.", e);
         }catch (SQLException e){
+            logger.info("Problem kod spajanja s bazom podataka");
             throw new SQLException("Error while connecting to database.", e);
         }
         return conn;
@@ -50,10 +49,10 @@ public interface Database {
                 carList.add(new Car(id, marka, model));
             }
         } catch (SQLException | IOException | ClassNotFoundException ex) {
+            logger.info("Problem pri radu s bazom podataka");
             String poruka = "Došlo je do pogreške u radu s bazom podataka";
             throw new BazaPodatakaException(poruka, ex);
         }
-
         return carList;
     }
 
@@ -81,11 +80,11 @@ public interface Database {
                         c = car;
                 }
 
-
                 CarPart novi = new CarPart(naziv,kategorija,c,id,proizvodac,kataloskiBroj,cijena,dostupnost);
                 listaDijelova.add(novi);
             }
         } catch (SQLException | IOException | ClassNotFoundException ex) {
+            logger.info("Problem pri radu s bazom podataka");
             String poruka = "Došlo je do pogreške u radu s bazom podataka";
             throw new BazaPodatakaException(poruka, ex);
         }
@@ -100,6 +99,7 @@ public interface Database {
             statement.executeUpdate();
 
         } catch (SQLException | IOException | ClassNotFoundException ex) {
+            logger.info("Problem pri radu s bazom podataka");
             String poruka = "Došlo je do pogreške u radu s bazom podataka";
             throw new BazaPodatakaException(poruka, ex);
         }
@@ -112,6 +112,7 @@ public interface Database {
             statement.executeUpdate();
 
         } catch (SQLException | IOException | ClassNotFoundException ex) {
+            logger.info("Problem pri radu s bazom podataka");
             String poruka = "Došlo je do pogreške u radu s bazom podataka";
             throw new BazaPodatakaException(poruka, ex);
         }
@@ -195,6 +196,7 @@ public interface Database {
             statement.executeUpdate();
 
         } catch (SQLException | IOException | ClassNotFoundException ex) {
+            logger.info("Problem pri radu s bazom podataka");
             String poruka = "Došlo je do pogreške u radu s bazom podataka";
             throw new BazaPodatakaException(poruka, ex);
         }
@@ -208,6 +210,7 @@ public interface Database {
             statement.executeUpdate();
 
         } catch (SQLException | IOException | ClassNotFoundException ex) {
+            logger.info("Problem pri radu s bazom podataka");
             String poruka = "Došlo je do pogreške u radu s bazom podataka";
             throw new BazaPodatakaException(poruka, ex);
         }
@@ -233,6 +236,7 @@ public interface Database {
             statement.executeUpdate();
 
         } catch (SQLException | IOException | ClassNotFoundException ex) {
+            logger.info("Problem pri radu s bazom podataka");
             String poruka = "Došlo je do pogreške u radu s bazom podataka";
             throw new BazaPodatakaException(poruka, ex);
         }
@@ -244,6 +248,7 @@ public interface Database {
             statement.setInt(1, id);
             statement.executeUpdate();
         } catch (SQLException | IOException | ClassNotFoundException ex) {
+            logger.info("Problem pri radu s bazom podataka");
             String poruka = "Došlo je do pogreške u radu s bazom podataka";
             throw new BazaPodatakaException(poruka, ex);
         }
@@ -256,6 +261,7 @@ public interface Database {
             statement.setInt(2,id);
             statement.executeUpdate();
         } catch (SQLException | IOException | ClassNotFoundException ex) {
+            logger.info("Problem pri radu s bazom podataka");
             String poruka = "Došlo je do pogreške u radu s bazom podataka";
             throw new BazaPodatakaException(poruka, ex);
         }

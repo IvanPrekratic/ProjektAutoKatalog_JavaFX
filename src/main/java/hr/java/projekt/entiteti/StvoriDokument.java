@@ -2,11 +2,12 @@ package hr.java.projekt.entiteti;
 
 
 import com.itextpdf.text.*;
+import com.itextpdf.text.log.Logger;
+import com.itextpdf.text.log.LoggerFactory;
 import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
-import hr.java.projekt.glavna.AutoKatalog;
 import hr.java.projekt.glavna.controllers.KosaricaController;
 import hr.java.projekt.login.SessionMenager;
 
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class StvoriDokument {
+    private static final Logger logger = LoggerFactory.getLogger(StvoriDokument.class);
 
 
     public static void stvoriDokument(List<CartItem> kosarica){
@@ -73,7 +75,9 @@ public class StvoriDokument {
             document.add(table);
         } catch (DocumentException | FileNotFoundException e) {
             e.printStackTrace();
+            logger.info("Problem s ucitavanjem dokumenta");
         } catch (IOException e) {
+            logger.info("Input Output exception");
             throw new RuntimeException(e);
         } finally {
             document.close();

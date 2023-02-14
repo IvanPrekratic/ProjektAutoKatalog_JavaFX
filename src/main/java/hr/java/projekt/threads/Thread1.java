@@ -2,7 +2,6 @@ package hr.java.projekt.threads;
 
 import hr.java.projekt.entiteti.CarPart;
 import hr.java.projekt.glavna.controllers.PromjeneController;
-import javafx.fxml.FXMLLoader;
 
 import java.util.List;
 

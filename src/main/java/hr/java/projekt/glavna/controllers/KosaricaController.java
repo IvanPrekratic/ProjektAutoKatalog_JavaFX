@@ -1,5 +1,7 @@
 package hr.java.projekt.glavna.controllers;
 
+import com.itextpdf.text.log.Logger;
+import com.itextpdf.text.log.LoggerFactory;
 import hr.java.projekt.entiteti.*;
 import hr.java.projekt.glavna.AutoKatalog;
 import hr.java.projekt.iznimke.BazaPodatakaException;
@@ -16,14 +18,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
-import javafx.stage.Window;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
 
 public class KosaricaController {
+    private static final Logger logger = LoggerFactory.getLogger(KosaricaController.class);
     @FXML
     private Label ukupnoLabel;
     @FXML
@@ -90,6 +90,7 @@ public class KosaricaController {
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
             e.printStackTrace();
+            logger.info("Problem s ucitavanjem scene");
         }
     }
     public void izveziKosaricu(){

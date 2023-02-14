@@ -1,5 +1,7 @@
 package hr.java.projekt.glavna.controllers;
 
+import com.itextpdf.text.log.Logger;
+import com.itextpdf.text.log.LoggerFactory;
 import hr.java.projekt.glavna.AutoKatalog;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +11,8 @@ import javafx.scene.layout.BorderPane;
 import java.io.IOException;
 
 public class KategorijeDijelovaController {
+
+    private static final Logger logger = LoggerFactory.getLogger(KategorijeDijelovaController.class);
 
     public static String filter = null;
     @FXML
@@ -36,6 +40,7 @@ public class KategorijeDijelovaController {
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
             e.printStackTrace();
+            logger.info("Problem s ucitavanjem scene");
         }
     }
     public void prikaziDijeloveKaroserije(){
@@ -46,6 +51,7 @@ public class KategorijeDijelovaController {
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
             e.printStackTrace();
+            logger.info("Problem s ucitavanjem scene");
         }
     }
     public void prikaziDijeloveKocnica(){
@@ -56,6 +62,7 @@ public class KategorijeDijelovaController {
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
             e.printStackTrace();
+            logger.info("Problem s ucitavanjem scene");
         }
     }
     public void prikaziDijeloveOvjesaIUpravljanja(){
@@ -66,6 +73,7 @@ public class KategorijeDijelovaController {
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
             e.printStackTrace();
+            logger.info("Problem s ucitavanjem scene");
         }
     }
     public void prikaziDijeloveElektronike(){
@@ -76,6 +84,7 @@ public class KategorijeDijelovaController {
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
             e.printStackTrace();
+            logger.info("Problem s ucitavanjem scene");
         }
     }
     public void prikaziUljaIAntifiz(){
@@ -86,6 +95,7 @@ public class KategorijeDijelovaController {
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
             e.printStackTrace();
+            logger.info("Problem s ucitavanjem scene");
         }
     }
     public void prikaziDijeloveOsovineIPrijenosa(){
@@ -96,6 +106,7 @@ public class KategorijeDijelovaController {
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
             e.printStackTrace();
+            logger.info("Problem s ucitavanjem scene");
         }
     }
     public void prikaziDijeloveHladenja(){
@@ -106,6 +117,7 @@ public class KategorijeDijelovaController {
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
             e.printStackTrace();
+            logger.info("Problem s ucitavanjem scene");
         }
     }
 

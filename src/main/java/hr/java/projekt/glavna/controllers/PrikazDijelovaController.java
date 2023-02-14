@@ -1,6 +1,7 @@
 package hr.java.projekt.glavna.controllers;
 
-import hr.java.projekt.entiteti.Car;
+import com.itextpdf.text.log.Logger;
+import com.itextpdf.text.log.LoggerFactory;
 import hr.java.projekt.entiteti.CarPart;
 import hr.java.projekt.entiteti.CartItem;
 import hr.java.projekt.entiteti.Kosarica;
@@ -18,13 +19,12 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
-import java.sql.PreparedStatement;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class PrikazDijelovaController {
 
+    private static final Logger logger = LoggerFactory.getLogger(PrikazDijelovaController.class);
     public static Kosarica kosarica = new Kosarica();
     @FXML
     private Button dodajUKosaricuButton;
@@ -108,11 +108,6 @@ public class PrikazDijelovaController {
         modelBox.setItems(listaZaModele);
         modelBox.setPromptText("Odaberi model");
 
-        /*ObservableList<String> listaZaKategorije = FXCollections.observableArrayList(kategorjeDijelova);
-        kategorijaBox.setItems(listaZaKategorije);
-        kategorijaBox.setPromptText("Odaberi kategoriju");
-         */
-
         ObservableList<String> listaZaProizvodaca = FXCollections.observableArrayList(proizvodaciDijelova);
         proizvodacBox.setItems(listaZaProizvodaca);
         proizvodacBox.setPromptText("Odaberi proizvodaca");
@@ -153,6 +148,7 @@ public class PrikazDijelovaController {
             root = FXMLLoader.load(getClass().getResource("/prikaz-dijelova-view.fxml"));
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
+            logger.info("Problem s ucitavanjem scene");
             e.printStackTrace();
         }
     }

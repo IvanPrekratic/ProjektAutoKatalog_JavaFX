@@ -1,15 +1,16 @@
 package hr.java.projekt.threads;
 
+import com.itextpdf.text.log.Logger;
+import com.itextpdf.text.log.LoggerFactory;
 import hr.java.projekt.entiteti.CarPart;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.util.Date;
 import java.util.List;
 
 public class Thread2 extends Thread{
+    private static final Logger logger = LoggerFactory.getLogger(Thread2.class);
     private List<CarPart> lista;
 
     public Thread2(List<CarPart> lista) {
@@ -23,6 +24,7 @@ public class Thread2 extends Thread{
             out.flush();
             out.close();
         } catch (IOException e) {
+            logger.info("Problem kod serijalizacije podataka");
             throw new RuntimeException(e);
         }
 

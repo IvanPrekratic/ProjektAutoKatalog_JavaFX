@@ -1,5 +1,7 @@
 package hr.java.projekt.glavna.controllers;
 
+import com.itextpdf.text.log.Logger;
+import com.itextpdf.text.log.LoggerFactory;
 import hr.java.projekt.entiteti.CarPart;
 import hr.java.projekt.glavna.AutoKatalog;
 import hr.java.projekt.iznimke.BazaPodatakaException;
@@ -21,6 +23,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class PromjenaStanjaController {
+    private static final Logger logger = LoggerFactory.getLogger(PromjenaStanjaController.class);
     @FXML
     private TextField kolicinaField;
     @FXML
@@ -69,6 +72,7 @@ public class PromjenaStanjaController {
                 root = FXMLLoader.load(getClass().getResource("/promjena-stanja-view.fxml"));
                 AutoKatalog.setMainPage(root);
             } catch (IOException e) {
+                logger.info("Problem s ucitavanjem scene");
                 e.printStackTrace();
             }
         }

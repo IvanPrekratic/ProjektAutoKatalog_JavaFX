@@ -1,5 +1,7 @@
 package hr.java.projekt.glavna.controllers;
 
+import com.itextpdf.text.log.Logger;
+import com.itextpdf.text.log.LoggerFactory;
 import hr.java.projekt.glavna.AutoKatalog;
 import hr.java.projekt.login.LoginPristupBazi;
 import hr.java.projekt.login.SessionMenager;
@@ -13,6 +15,7 @@ import javafx.scene.layout.BorderPane;
 import java.io.IOException;
 
 public class PocetniController {
+    private static final Logger logger = LoggerFactory.getLogger(PocetniController.class);
     @FXML
     private TextField usernameField;
     @FXML
@@ -43,6 +46,7 @@ public class PocetniController {
                     root = FXMLLoader.load(getClass().getResource("/admin-pocetni-view.fxml"));
                     AutoKatalog.setMainPage(root);
                 } catch (IOException e) {
+                    logger.info("Problem s ucitavanjem scene");
                     e.printStackTrace();
                 }
             } else if (SessionMenager.getRole().equals("User")) {
@@ -51,6 +55,7 @@ public class PocetniController {
                     root = FXMLLoader.load(getClass().getResource("/kategorije-dijelova-view.fxml"));
                     AutoKatalog.setMainPage(root);
                 } catch (IOException e) {
+                    logger.info("Problem s ucitavanjem scene");
                     e.printStackTrace();
                 }
             }

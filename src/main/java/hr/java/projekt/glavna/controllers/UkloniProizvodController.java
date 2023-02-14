@@ -1,5 +1,7 @@
 package hr.java.projekt.glavna.controllers;
 
+import com.itextpdf.text.log.Logger;
+import com.itextpdf.text.log.LoggerFactory;
 import hr.java.projekt.entiteti.CarPart;
 import hr.java.projekt.glavna.AutoKatalog;
 import hr.java.projekt.iznimke.BazaPodatakaException;
@@ -22,6 +24,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class UkloniProizvodController {
+    private static final Logger logger = LoggerFactory.getLogger(UkloniProizvodController.class);
     @FXML
     private TableView<CarPart> dijeloviTable;
     @FXML
@@ -61,12 +64,10 @@ public class UkloniProizvodController {
         alert.setTitle("Brisanje elementa!");
         alert.setContentText(confirmationMessage);
         alert.showAndWait().ifPresent(response -> {
-            if (response == ButtonType.OK) {
+            if (response == ButtonType.OK)
                 ok.set(true);
-            }
         });
         if(dijeloviTable.getSelectionModel().getSelectedItems() != null && ok.get()){
-
             Integer partID = dijeloviTable.getSelectionModel().getSelectedItem().getId();
             Database.obrisiProizvod(partID);
             dijelovi = Database.dohvatiDijelove();
@@ -76,6 +77,7 @@ public class UkloniProizvodController {
                 root = FXMLLoader.load(getClass().getResource("/ukloni-proizvod-view.fxml"));
                 AutoKatalog.setMainPage(root);
             } catch (IOException e) {
+                logger.info("Problem s ucitavanjem scene");
                 e.printStackTrace();
             }
         }

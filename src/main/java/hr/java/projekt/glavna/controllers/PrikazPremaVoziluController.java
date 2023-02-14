@@ -1,8 +1,9 @@
 package hr.java.projekt.glavna.controllers;
 
+import com.itextpdf.text.log.Logger;
+import com.itextpdf.text.log.LoggerFactory;
 import hr.java.projekt.entiteti.CarPart;
 import hr.java.projekt.entiteti.CartItem;
-import hr.java.projekt.entiteti.Kosarica;
 import hr.java.projekt.glavna.AutoKatalog;
 import hr.java.projekt.iznimke.BazaPodatakaException;
 import hr.java.projekt.login.Database;
@@ -21,6 +22,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class PrikazPremaVoziluController {
+    private static final Logger logger = LoggerFactory.getLogger(PrikazPremaVoziluController.class);
     @FXML
     private TextField kataloskiField;
     @FXML
@@ -136,6 +138,7 @@ public class PrikazPremaVoziluController {
             root = FXMLLoader.load(getClass().getResource("/prikaz-dijelova-view.fxml"));
             AutoKatalog.setMainPage(root);
         } catch (IOException e) {
+            logger.info("Problem s ucitavanjem scene");
             e.printStackTrace();
         }
     }

@@ -1,9 +1,13 @@
 package hr.java.projekt.login;
 
+import com.itextpdf.text.log.Logger;
+import com.itextpdf.text.log.LoggerFactory;
+
 import java.io.IOException;
 import java.sql.*;
 
 public class LoginPristupBazi{
+    private static final Logger logger = LoggerFactory.getLogger(LoginPristupBazi.class);
     public static String autentikacija(String username, int hash){
         String endRole = "";
 
@@ -26,8 +30,10 @@ public class LoginPristupBazi{
                     endRole = "User";
             }
         } catch (SQLException | IOException e) {
+            logger.info("Problem kod spajanja s bazom podataka");
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
+            logger.info("Problem kod spajanja s bazom podataka");
             throw new RuntimeException(e);
         }
         return endRole;
