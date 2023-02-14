@@ -10,12 +10,15 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class DodajProizvodController {
     @FXML
@@ -35,6 +38,7 @@ public class DodajProizvodController {
     @FXML
     private TextField kolicinaField;
     private List<String> kategorjeDijelova;
+    public static List<CarPart> dodani = new ArrayList<>();
 
     public void initialize() throws BazaPodatakaException {
         PrikazPremaVoziluController.dijelovi = Database.dohvatiDijelove();
@@ -47,8 +51,13 @@ public class DodajProizvodController {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Unos novog elementa!");
         alert.setContentText(confirmationMessage);
-        alert.show();
-        if(popunjeno()){
+        AtomicBoolean ok = new AtomicBoolean(false);
+        alert.showAndWait().ifPresent(response -> {
+            if (response == ButtonType.OK) {
+                ok.set(true);
+            }
+        });
+        if(popunjeno() && ok.get()){
             Integer idxAuta = 0;
             boolean postoji = false;
             for (Car car: Database.dohvatiAute()) {
@@ -59,6 +68,7 @@ public class DodajProizvodController {
                             Integer.valueOf(kolicinaField.getText()));
                     idxAuta = car.getId();
                     Database.dodajProizvod(novi,idxAuta);
+                    dodani.add(novi);
                 }
             }
             if(!postoji){
@@ -68,7 +78,7 @@ public class DodajProizvodController {
                         Integer.valueOf(kolicinaField.getText()));
                 Database.dodajNoviAuto(noviAuto);
                 Database.dodajProizvodSNovimAutom(novi,noviAuto);
-
+                dodani.add(novi);
             }
         }
         kategorijaBox.setValue("");

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.java.projekt.glavna.controllers.PromjeneController">
+    <fx:include source="menuBar.fxml" />
+    <bottom>
+        <GridPane BorderPane.alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="122.20001220703125" minWidth="10.0" prefWidth="39.19998779296875" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.39999389648435" minWidth="10.0" prefWidth="150.99996337890627" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="10.0" prefWidth="150.20003662109372" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="212.7999877929688" minWidth="10.0" prefWidth="151.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.800048828125" minWidth="10.0" prefWidth="149.59998779296882" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.800048828125" minWidth="10.0" prefWidth="118.20000000000005" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.199951171875" minWidth="10.0" prefWidth="44.79990234374998" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="239.60001525878906" minHeight="10.0" prefHeight="56.80000610351563" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="239.60001525878906" minHeight="10.0" prefHeight="38.399993896484375" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="239.60001525878906" minHeight="10.0" prefHeight="42.39999389648436" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="239.60001525878906" minHeight="0.0" prefHeight="42.39997253417968" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="239.60001525878906" minHeight="10.0" prefHeight="39.99998779296874" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="239.60001525878906" minHeight="10.0" prefHeight="39.99998779296874" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="364.00001220703126" minHeight="10.0" prefHeight="37.800012207031244" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="242.2000244140625" minHeight="10.0" prefHeight="41.19998779296873" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="212.79996337890623" minHeight="10.0" prefHeight="44.599993896484364" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="237.6000244140625" minHeight="10.0" prefHeight="221.40000610351564" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <BorderPane.margin>
+                <Insets top="30.0" />
+            </BorderPane.margin>
+         <children>
+            <Label text="Detalji elementa sa zadnjom promjenom" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label text="Kataloški broj:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Naziv proizvoda:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Kategorija proizvoda:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Marka vozila:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Model vozila:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Proizvođač:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Cijena proizvoda:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Na skladištu:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="kataloskiLabel" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label fx:id="nazivLabel" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label fx:id="kategorijaLabel" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Label fx:id="markaLabel" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Label fx:id="modelLabel" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <Label fx:id="proizvodacLabel" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <Label fx:id="cijenaLabel" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            <Label fx:id="skladisteLabel" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+         </children>
+        </GridPane>
+    </bottom>
+</BorderPane>

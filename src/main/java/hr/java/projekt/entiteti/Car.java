@@ -1,6 +1,8 @@
 package hr.java.projekt.entiteti;
 
-public class Car {
+import java.io.Serializable;
+
+public class Car implements Serializable {
     private Integer id;
     private String make;
     private String model;

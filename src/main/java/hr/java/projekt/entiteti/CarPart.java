@@ -1,6 +1,8 @@
 package hr.java.projekt.entiteti;
 
-public class CarPart extends Item{
+import java.io.Serializable;
+
+public class CarPart extends Item implements Serializable {
     private Car car;
     private Integer id;
     private String partManufactor;

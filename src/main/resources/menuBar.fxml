@@ -33,6 +33,11 @@
                   <MenuItem mnemonicParsing="false" onAction="#promjeniStanjeNaSkladistu" text="Promjeni stanje na skladištu" />
             </items>
           </Menu>
+            <Menu fx:id="promjene" mnemonicParsing="false" text="Promjene">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#pogledajPromjene" text="Posljednja promjena" />
+              </items>
+            </Menu>
         </menus>
       </MenuBar>
    </children>
