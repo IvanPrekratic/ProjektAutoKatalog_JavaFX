@@ -68,7 +68,6 @@ public class KosaricaController {
     public void makniIzKosarice() throws BazaPodatakaException {
         CartItem novi = dijeloviTable.getSelectionModel().getSelectedItem();
 
-
         Integer broj = novi.getKolicina();
         for (int i = 0; i < PrikazDijelovaController.dijelovi.size(); i++) {
             CarPart itm =PrikazDijelovaController.dijelovi.get(i);
@@ -97,7 +96,7 @@ public class KosaricaController {
         StvoriDokument.stvoriDokument(PrikazDijelovaController.kosarica.getElementi());
     }
     private String ukupno(){
-        Double ukupno = Double.valueOf(0);
+        Double ukupno = (double) 0;
         DecimalFormat df = new DecimalFormat("#.00");
         for (CartItem itm: PrikazDijelovaController.kosarica.getElementi()) {
             ukupno+=itm.getProizvod().getPartPrice()*itm.getKolicina();

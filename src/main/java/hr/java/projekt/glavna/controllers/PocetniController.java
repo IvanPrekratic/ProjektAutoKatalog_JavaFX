@@ -28,7 +28,6 @@ public class PocetniController {
         String pass = passwordField.getText();
         int hash = pass.hashCode();
 
-
         String role = LoginPristupBazi.autentikacija(username, hash);
         if (role.equals("")){
             String errorMessage = "Krivi podaci za prijavu!";

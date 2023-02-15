@@ -3,13 +3,14 @@ ID auta:
     2 opel meriva
     3 mercedes e klasa
     4 toyota yaris
+    33 Opel Vectra
 
 Kategorija dijelova:
     motor
     karoserija
     kocnice
     ovjesIUpravljanje
-    elektronika
     uljeIAntifriz
+    elektronika
     osovinaIPrijenos
     hladenje

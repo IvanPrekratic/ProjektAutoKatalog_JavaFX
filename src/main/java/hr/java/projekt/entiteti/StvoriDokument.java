@@ -36,7 +36,6 @@ public class StvoriDokument {
             rows[i][4] = kosarica.get(i).getProizvod().getPartPrice().toString();
         }
 
-
         Document document = new Document(PageSize.A4);
         try {
             PdfWriter.getInstance(document, new FileOutputStream("Moja kosarica.pdf"));

@@ -94,5 +94,217 @@ INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cij
 VALUES (1, 'Selen upravljača', 'ovjesIUpravljanje', 'MOTAQUIP', '77 00 418 941', 6.63, 5);
 
 
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Indukcijski svitak', 'elektronika', 'KAMOKA', '77 00 274 008', 25.63, 6);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Lambda sonda', 'elektronika', 'MAXGEAR', '77 00 864 987', 32.27, 9);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Otpornik ventilacije', 'elektronika', 'SIDAT', '77 01 050 736', 22.07, 3);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Elekropokretač', 'elektronika', 'AS-PL', '77 00 867 838', 83.49, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Poluosovina', 'osovinaIPrijenos', 'MAXGEAR', '77 00 109 013', 46.49, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Homokinetički zglob', 'osovinaIPrijenos', 'MAXGEAR', '77 00 110 484', 26.79, 4);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Ležaj kotača', 'osovinaIPrijenos', 'MAXGEAR', '77 01 464 049', 12.67, 8);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Osovinski rukavac', 'osovinaIPrijenos', 'GSP', '77 00 416 374', 15.57, 6);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Temperaturna sklopka', 'hladenje', 'KAMOKA', '77 00 782 503', 6.67, 11);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Termostat', 'hladenje', 'KAMOKA', '77 00 110 716', 11.02, 8);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Hladnjak motora', 'hladenje', 'NRF', '77 01 352 603', 47.59, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, 'Grijač kabine', 'hladenje', 'VAN WEZEL', '77 01 044 790', 18.84, 3);
 
 
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Brtva glave', 'motor', 'Dr.Motor', '5607837', 25.84, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Razvodni lanac', 'motor', 'INA', '5636360', 24.68, 4);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Remenica', 'motor', 'FAI AutoParts', '5614438', 33.28, 4);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Brtva ispušne grane', 'motor', 'REINZ', '850673', 7, 4);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Kvaka vrata', 'karoserija', 'Ac Rolcar', '5138140', 20.13, 2);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Antena', 'karoserija', 'Topran', '4705831', 12.28, 6);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Staklo zrcala', 'karoserija', 'ALKAR', '6428776', 7.79, 8);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Plinska opruga prtljažnika', 'karoserija', 'KAMOKA', '5132262', 11.09, 10);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Kočiona čeljust', 'kocnice', 'MAXGEAR', '542472', 36.48, 9);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Disk pločice', 'kocnice', 'KAVO', '1605995', 17.04, 12);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Kočiono crijevo', 'kocnice', 'NK', '562164', 10.84, 8);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Kočioni disk', 'kocnice', 'VAICO', '569111', 19.82, 10);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Ležaj amortizera', 'ovjesIUpravljanje', 'Febi Bilstein', '0312510', 6.75, 7);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Vilica', 'ovjesIUpravljanje', 'TEKNOROT', '5352028', 44.15, 3);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Kugla', 'ovjesIUpravljanje', 'MAXGEAR', '352086', 9.04, 6);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Krajnik', 'ovjesIUpravljanje', 'KAMOKA', '1603240 ', 9.77, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, '5W40 Shell Helix sin. ulje 1L', 'uljeIAntifriz', 'Shell', 'RN 0700 07', 9.30, 15);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (1, '5W40 Shell Helix sin. ulje 4L', 'uljeIAntifriz', 'Shell', 'RN 0700 08', 33.29, 6);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, '5W40 Shell Helix sin. ulje 1L', 'uljeIAntifriz', 'Shell', 'RN 0700 07', 9.30, 15);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, '5W40 Shell Helix sin. ulje 4L', 'uljeIAntifriz', 'Shell', 'RN 0700 08', 33.29, 6);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Filter ulja', 'uljeIAntifriz', 'FILTRON', '650311', 4.20, 6);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Vijak kartera ulja', 'uljeIAntifriz', 'STC', '652976', 2.44, 7);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Antifriz crveni G12+ (1L)', 'uljeIAntifriz', 'Pena', 'AFNOR G12-621', 3.30, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Indukcijski svitak', 'elektronika', 'ERA', '1208093', 90.55, 7);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Senzor položaja radilice', 'elektronika', 'KAMOKA', '6238109', 9.87, 4);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Elekropokretač', 'elektronika', 'Valeo', '6202079', 94.17, 6);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Parking senzor', 'elektronika', 'MAXGEAR', '6238242', 18.48, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Poluosovina', 'osovinaIPrijenos', 'MAXGEAR', '374513', 94.31, 3);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Glavčina kotača', 'osovinaIPrijenos', 'KAMOKA', '326001', 15.71, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Manžeta poluosovine', 'osovinaIPrijenos', 'MAXGEAR', '51704102', 5.09, 10);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Komplet kvačila', 'osovinaIPrijenos', 'Valeo', '1606510', 95.69, 8);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Kompresor klime', 'hladenje', 'ELSTOCK', '1854111', 234.89, 2);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Termostat', 'hladenje', 'Febi Bilstein', '12992692', 23.19, 4);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Pumpa vode', 'hladenje', 'Dayco', '1334145', 49.96, 7);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (2, 'Ventilator hladnjaka', 'hladenje', 'NRF', '1314965', 173.84, 3);
+
+
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Brtva kartera', 'motor', 'ELRING', '651 014 02 80', 14.59, 3);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Brtva glave', 'motor', 'Dr. Motor', '651 016 05 00', 39.73, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Podizač ventila', 'motor', 'Febi Bilstein', '651 050 00 80', 9.79, 9);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Kućište fitera ulja', 'motor', 'METZGER', '651 180 06 10', 113.32, 4);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Zamašnjak', 'motor', 'SACHS', '651 030 52 05', 555.79, 4);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Glavni far', 'karoserija', 'HELLA', '212 820 01 59', 1042.67, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Plinska opruga poklopca motora', 'karoserija', 'KAMOKA', '204 980 09 64', 10.63, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Sajla parkirne kočnice', 'karoserija', 'ATE', '212 420 01 85', 15.58, 3);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Staklo za retrovizor', 'karoserija', 'ALKAR', 'A246 810 06 21', 105.65, 2);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Kočiona čeljust', 'kocnice', 'KAMOKA', '204 421 04 81', 63.72, 6);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Kočioni disk', 'kocnice', 'BREMBO', '211 423 07 12', 43.38, 8);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Komplet kočionih obloga', 'kocnice', 'BREMBO', '000 423 02 30', 30.24, 7);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Kočno crijevo', 'kocnice', 'TRW', '212 420 04 48', 10.36, 10);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Amortizer', 'ovjesIUpravljanje', 'SACHS', '212 320 06 30', 106.92, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Opruga amortizera', 'ovjesIUpravljanje', 'Bilstein', '212 324 13 04', 54.52, 6);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Rame', 'ovjesIUpravljanje', 'TEKNOROT', '212 330 30 11', 36.23, 7);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Glava spone upravljača', 'ovjesIUpravljanje', 'OPTIMAL', '212 330 81 00', 24.02, 9);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Filter ulja', 'uljeIAntifriz', 'KNECHT', '651 180 01 09', 12.47, 12);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Prsten vijka kartera', 'uljeIAntifriz', 'ELRING', '007603 014106', 0.53, 23);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, '5W40 Shell Helix sin. ulje 1L', 'uljeIAntifriz', 'Shell', 'RN 0700 07', 9.30, 15);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, '5W40 Shell Helix sin. ulje 4L', 'uljeIAntifriz', 'Shell', 'RN 0700 08', 33.29, 6);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Grijač', 'elektronika', 'KAMOKA', '001 159 57 01', 11.48, 6);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Lambda sonda', 'elektronika', 'MAXGEAR', '004 542 73 18', 93.98, 4);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Mjerač mase zraka', 'elektronika', 'Febi Bilstein', '651 090 00 48', 124.91, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Elekropokretač', 'elektronika', 'AS-PL', '651 906 00 26', 139.91, 3);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Glavčina kotača', 'osovinaIPrijenos', 'Meyle', '211 357 03 08', 39.91, 3);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Srednji ležaj kardana', 'osovinaIPrijenos', 'TEDGUM', '204 410 09 81', 59.90, 4);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Ležaj kotača', 'osovinaIPrijenos', 'SKF', '212 330 00 25', 39.63, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Komplet kvačila', 'osovinaIPrijenos', 'SACHS', '025 250 59 01', 289.92, 8);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Kompresor klime', 'hladenje', 'NRF', '002 230 19 11', 294.92, 8);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Pumpa vode', 'hladenje', 'NISSENS', '204 835 03 64', 97.75, 2);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Termostat', 'hladenje', 'MAXGEAR', '651 200 12 15', 59.96, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (3, 'Grijač kabine', 'hladenje', 'NRF', '204 830 00 61', 83.92, 4);
+
+
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Svjećica', 'motor', 'Bosch', '90080 91108', 3.30, 34);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Brtva glave', 'motor', 'ELRING', '11115-23030', 33.33, 3);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Brtva usisne grane', 'motor', 'ELRING', '17177-23020', 8.45, 8);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Flavni far', 'karoserija', 'TYC', '81130-0D080', 73.92, 8);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Plinska opruga', 'karoserija', 'MAXGEAR', '68950-05925', 10.76, 10);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Vanjsko zrcano', 'karoserija', 'ALKAR', '87940-0D030', 43.98, 3);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Kočioni disk', 'kocnice', 'JPN', '42431-02050', 16.14, 6);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Disk pločice', 'kocnice', 'MAXGEAR', '04466-20090', 14.10, 10);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Bubanj kočnica', 'kocnice', 'BLUE PRINT', '42431-12201', 30, 8);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Opruga podvozja', 'ovjesIUpravljanje', 'Kayaba', '48231-52060', 35.57, 4);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Stabilizator', 'ovjesIUpravljanje', 'SWAG', '48817-52010', 9.37, 6);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Krajnik spone', 'ovjesIUpravljanje', 'JapanParts', '45046-19175', 9.97, 3);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Filter ulja', 'uljeIAntifriz', 'JapanParts', '90915-10009', 3.89, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, '5W40 Shell Helix sin. ulje 1L', 'uljeIAntifriz', 'Shell', 'RN 0700 07', 9.30, 15);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, '5W40 Shell Helix sin. ulje 4L', 'uljeIAntifriz', 'Shell', 'RN 0700 08', 33.29, 6);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Senzor brzine', 'elektronika', 'NK', '89542-0D010', 7.39, 4);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Lambda sonda', 'elektronika', 'MAXGEAR', '89465-0H020', 35.24, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Bobina', 'elektronika', 'MAXGEAR', '90080-19021', 27.19, 8);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Homokinetički zglob', 'osovinaIPrijenos', 'KAMOKA', '43410-0H010-A', 26.33, 4);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Manžeta poluosovine', 'osovinaIPrijenos', 'SEINSA', '04438-0D020', 7.59, 6);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Poluosovina', 'osovinaIPrijenos', 'BLUE PRINT', '43420-52110', 84.35, 3);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Termostat', 'hladenje', 'NRF', '90916-03122', 11.29, 5);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Pumpa vode', 'hladenje', 'JPN', '16100-09140', 23.43, 8);
+INSERT INTO dijelovi(auto_id, naziv, kategorija, proizvodac, kataloski_broj, cijena, dostupnost) 
+VALUES (4, 'Tlačna sklopka klime', 'hladenje', 'SIDAT', '88645-60030', 35.71, 3);

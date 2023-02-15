@@ -41,7 +41,6 @@ public class UkloniProizvodController {
     private TableColumn<CarPart, Double> cijenaDijelaColumn;
     List<CarPart> dijelovi;
 
-
     public void initialize() throws BazaPodatakaException {
         dijelovi = Database.dohvatiDijelove();
 
@@ -54,8 +53,6 @@ public class UkloniProizvodController {
         cijenaDijelaColumn.setCellValueFactory(dijelovi -> new SimpleDoubleProperty(dijelovi.getValue().getPartPrice()).asObject());
         dijeloviTable.setItems(observableListDijelovi);
     }
-
-
 
     public void ukloniProizvod() throws BazaPodatakaException {
         AtomicBoolean ok = new AtomicBoolean(false);

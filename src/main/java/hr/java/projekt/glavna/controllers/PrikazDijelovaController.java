@@ -99,10 +99,10 @@ public class PrikazDijelovaController {
         cijenaDijelaColumn.setCellValueFactory(dijelovi -> new SimpleDoubleProperty(dijelovi.getValue().getPartPrice()).asObject());
         dijeloviTable.setItems(observableListDijelovi);
 
+
         ObservableList<String> listaZaMarke = FXCollections.observableArrayList(markeAuta);
         markaBox.setItems(listaZaMarke);
         markaBox.setPromptText("Odaberi marku");
-
 
         ObservableList<String> listaZaModele = FXCollections.observableArrayList(modeliAuta);
         modelBox.setItems(listaZaModele);
@@ -121,36 +121,45 @@ public class PrikazDijelovaController {
         boolean postoji = false;
         CarPart novi = dijeloviTable.getSelectionModel().getSelectedItem();
         Integer broj = Integer.parseInt(brKomada.getText());
+        if(dijeloviTable.getSelectionModel().getSelectedItem().getPartStock() >= broj){
+            for (CartItem itm: PrikazDijelovaController.kosarica.getElementi()) {
+                if(itm.getProizvod().getPartNumber().equals(novi.getPartNumber())) {
+                    Integer stara = itm.getKolicina();
+                    itm.setKolicina(stara + broj);
+                    postoji = true;
+                    Database.smanjiStanje(novi, broj);
+                }
+            }
 
-        for (CartItem itm: PrikazDijelovaController.kosarica.getElementi()) {
-            if(itm.getProizvod().getPartNumber().equals(novi.getPartNumber())) {
-                Integer stara = itm.getKolicina();
-                itm.setKolicina(stara + broj);
-                postoji = true;
+            if(!postoji){
+                CartItem oznaceni = new CartItem(novi, broj);
+                PrikazDijelovaController.kosarica.dodajElement(oznaceni);
                 Database.smanjiStanje(novi, broj);
             }
+            if(KategorijeDijelovaController.filter != null){
+                dijelovi = Database.dohvatiDijelove();
+                dijelovi = filter(dijelovi);
+            }
+            else
+                dijelovi = Database.dohvatiDijelove();
+            dijeloviTable.refresh();
+            BorderPane root;
+            try {
+                root = FXMLLoader.load(getClass().getResource("/prikaz-dijelova-view.fxml"));
+                AutoKatalog.setMainPage(root);
+            } catch (IOException e) {
+                logger.info("Problem s ucitavanjem scene");
+                e.printStackTrace();
+            }
+        }
+        else {
+            String confirmationMessage = "Nedovoljno proizvoda na skladištu!";
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Skladište error!");
+            alert.setContentText(confirmationMessage);
+            alert.show();
         }
 
-        if(!postoji){
-            CartItem oznaceni = new CartItem(novi, broj);
-            PrikazDijelovaController.kosarica.dodajElement(oznaceni);
-            Database.smanjiStanje(novi, broj);
-        }
-        if(KategorijeDijelovaController.filter != null){
-            dijelovi = Database.dohvatiDijelove();
-            dijelovi = filter(dijelovi);
-        }
-        else
-            dijelovi = Database.dohvatiDijelove();
-        dijeloviTable.refresh();
-        BorderPane root;
-        try {
-            root = FXMLLoader.load(getClass().getResource("/prikaz-dijelova-view.fxml"));
-            AutoKatalog.setMainPage(root);
-        } catch (IOException e) {
-            logger.info("Problem s ucitavanjem scene");
-            e.printStackTrace();
-        }
     }
     public void filtrirajMarke(){
         List<CarPart> filtriraniDijelovi;
